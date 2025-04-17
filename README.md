@@ -68,7 +68,7 @@ live web:[Portfolio](https://youssef-portfolio-gold.vercel.app/)
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/YussefMo/animated-portfolio.git
    cd portfolio
    ```
 
