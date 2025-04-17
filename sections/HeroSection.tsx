@@ -9,7 +9,7 @@ function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex h-screen items-center justify-center overflow-hidden"
+      className="relative flex h-screen items-center justify-center overflow-hidden bg-black"
     >
       <AnimatedBoxes />
       <div className="relative z-10 container mx-auto px-4">
