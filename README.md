@@ -8,6 +8,8 @@
 A modern, responsive portfolio website built with Next.js, React, and
 TailwindCSS, featuring animated UI elements and a clean, professional design.
 
+live web:[Portfolio](https://youssef-portfolio-gold.vercel.app/)
+
 ## ✨ Features
 
 - **Responsive Design** - Looks great on all devices from mobile to desktop
@@ -134,7 +136,7 @@ Styling is primarily handled through TailwindCSS with:
 ## 📞 Contact
 
 Youssef Mohammed Ali -
-[Contact through the website](https://your-portfolio-url.com/contact)
+[Contact through the website](https://youssef-portfolio-gold.vercel.app/)
 
 ---
 
