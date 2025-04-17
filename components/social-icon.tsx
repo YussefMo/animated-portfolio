@@ -1,5 +1,5 @@
-import type React from "react"
 import Link from "next/link"
+import type React from "react"
 import type { ReactNode } from "react"
 
 interface SocialIconProps {
@@ -7,7 +7,7 @@ interface SocialIconProps {
   href: string
   label: string
   className?: string
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void
+  onClick?: () => void
 }
 
 export default function SocialIcon({ icon, href, label, className = "", onClick }: SocialIconProps) {
