@@ -22,7 +22,11 @@ function ContactSection() {
     reset
   } = useForm<FormValues>();
 
-  async function onSubmit (data: FormValues){
+  async function onSubmit(data: FormValues) {
+    if (data.message.length > 200) {
+      toast.error('Message cannot exceed 200 characters.');
+      return;
+    }
     try {
       await createContactReq(data);
       reset();
@@ -34,7 +38,7 @@ function ContactSection() {
         'Failed to submit contact request. Please try again later.';
       toast.error(errorMessage);
     }
-  };
+  }
 
   return (
     <section id="contact" className="bg-black py-20">
