@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Youssef Mohammed Ali
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19.0.0-blue?style=flat-square&logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?style=flat-square&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.6.3-0055FF?style=flat-square&logo=framer)
 
-First, run the development server:
+A modern, responsive portfolio website built with Next.js, React, and
+TailwindCSS, featuring animated UI elements and a clean, professional design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **Responsive Design** - Looks great on all devices from mobile to desktop
+- **Modern UI** - Clean, professional interface with animations and transitions
+- **Interactive Elements** - Custom cursor, animated boxes, and interactive
+  shapes
+- **Project Showcase** - Filterable project grid with modal details
+- **Contact Form** - Integrated form with validation using React Hook Form
+- **Animated Sections** - Smooth animations powered by Framer Motion
+- **Optimized Images** - Fast loading with Next.js Image optimization
+- **Accessibility** - Built with web accessibility best practices
+
+## 🛠️ Technologies
+
+### Frontend
+
+- **Next.js** - React framework with App Router
+- **React** - UI library
+- **TailwindCSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **React Hook Form** - Form validation
+- **React Toastify** - Toast notifications
+- **React Scroll** - Smooth scrolling
+- **TypeScript** - Type safety
+
+### Development
+
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **Turbopack** - Fast development builds
+
+## 📋 Project Structure
+
+```
+├── app/                  # Next.js App Router
+├── components/           # Reusable UI components
+│   ├── client/           # Client-side components
+│   └── ui/               # UI primitives
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility functions and API
+├── public/               # Static assets
+│   └── images/           # Project images
+├── sections/             # Page sections
+└── types/                # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js (v18 or later)
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 🏗️ Build and Deployment
+
+```bash
+# Build for production
+npm run build
+# or
+yarn build
+
+# Start production server
+npm run start
+# or
+yarn start
+```
+
+## 🧩 Key Components
+
+- **HeroSection** - Landing section with animated boxes and call-to-action
+  buttons
+- **AboutSection** - Developer profile with skills and experience
+- **WorkSection** - Project showcase with filtering capabilities
+- **ContactSection** - Contact form with validation
+- **AnimatedBoxes** - Background animation component
+- **CustomCursor** - Enhanced cursor experience
+- **InteractiveShapes** - Dynamic background elements
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive and optimized for:
+
+- Mobile devices
+- Tablets
+- Desktops
+- Large screens
+
+## 🎨 Styling
+
+Styling is primarily handled through TailwindCSS with:
+
+- Custom gradients
+- Responsive typography
+- Dark theme
+- Animation utilities
+
+## 📞 Contact
+
+Youssef Mohammed Ali -
+[Contact through the website](https://your-portfolio-url.com/contact)
+
+---
+
+Built with ❤️ using Next.js and React
