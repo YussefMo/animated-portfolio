@@ -27,6 +27,10 @@ function ContactSection() {
       toast.error('Message cannot exceed 200 characters.');
       return;
     }
+    if (data.message.length < 10) {
+      toast.error('Message cannot be less than 10 characters.');
+      return;
+    }
     try {
       await createContactReq(data);
       reset();
