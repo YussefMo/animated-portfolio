@@ -1,5 +1,7 @@
 import type React from 'react';
 import type { Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -17,6 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SpeedInsights />
+        <Analytics />
         <ToastContainer
           position="top-center"
           autoClose={2000}
@@ -36,5 +40,5 @@ export default function RootLayout({
   );
 }
 
-import './globals.css';import { Bounce, ToastContainer } from 'react-toastify';
-
+import './globals.css';
+import { Bounce, ToastContainer } from 'react-toastify';
