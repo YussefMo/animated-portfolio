@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 // Type definitions for portfolio project
 
-export interface ExtraSection {
+interface ExtraSection {
   gitHubRepoName: string;
   title: string;
   description: string;
@@ -10,8 +11,8 @@ export interface ExtraSection {
   repo: string;
 }
 
-export interface Project {
-  _id: number | string;
+interface Project {
+  id: string;
   category: string;
   gitHubRepoName: string;
   title: string;
@@ -21,13 +22,14 @@ export interface Project {
   liveDemo: string;
   repo: string;
   extraSections?: ExtraSection[];
+  createdAt: string | { seconds: number; nanoseconds: number } | null;
 }
 
-export interface ProjectsResponse {
+interface ProjectsResponse {
   projects: Project[];
 }
 
-export interface ProjectCardProps {
+interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
@@ -35,7 +37,7 @@ export interface ProjectCardProps {
   onClick?: () => void;
 }
 
-export interface ContactFormProps {
+interface ContactFormProps {
   name: string;
   email: string;
   phoneNumber: string;

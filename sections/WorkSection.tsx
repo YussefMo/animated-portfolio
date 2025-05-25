@@ -7,13 +7,12 @@ import { getAllProjects } from '@/lib/portfolioApi';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { Suspense, useEffect, useState } from 'react';
-import { Project, ProjectCardProps } from '@/types';
 import Loader from '@/components/Loader';
 import { useSearchParams } from 'next/navigation';
 
 // Client component that fetches data
 function ProjectsGrid() {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[] | null>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const searchParams = useSearchParams();
@@ -23,7 +22,7 @@ function ProjectsGrid() {
     async function fetchProjects() {
       try {
         const data = await getAllProjects();
-        setProjects(data.projects);
+        setProjects(data);
       } catch (err: any) {
         setError(err.message);
       } finally {
@@ -42,14 +41,14 @@ function ProjectsGrid() {
   const filteredProjects =
     activeCategory === 'all'
       ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      : projects!.filter((project) => project.category === activeCategory);
 
   return (
     <Modal>
-      {filteredProjects.length > 0 ? (
-        filteredProjects.map((project) => (
-          <React.Fragment key={project._id}>
-            <Modal.Open opens={project._id}>
+      {filteredProjects!.length > 0 ? (
+        filteredProjects!.map((project) => (
+          <React.Fragment key={project.id}>
+            <Modal.Open opens={project.id}>
               <ProjectCard
                 title={project.title}
                 description={project.description}
@@ -58,7 +57,7 @@ function ProjectsGrid() {
               />
             </Modal.Open>
 
-            <Modal.Window name={project._id}>
+            <Modal.Window name={project.id}>
               <ProjectModalContent {...project} />
             </Modal.Window>
           </React.Fragment>

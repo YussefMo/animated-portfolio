@@ -1,10 +1,8 @@
 import Image from 'next/image';
 
-import { Project, ExtraSection } from '@/types';
-
 type ProjectModalContentProps = Omit<
   Project,
-  '_id' | 'category' | 'gitHubRepoName'
+  'id' | 'category' | 'gitHubRepoName'
 > & {
   extraSections?: ExtraSection[];
 };
