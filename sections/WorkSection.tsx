@@ -93,7 +93,9 @@ function WorkSection() {
           </h2>
           <div className="mb-6 w-full sm:mb-3">
             <div className="flex flex-wrap justify-end gap-2">
-              <Filter />
+              <Suspense fallback={<div className="text-white">Loading filters...</div>}>
+                <Filter />
+              </Suspense>
             </div>
           </div>
           <div className="grid max-h-[650px] grid-cols-1 gap-6 overflow-auto border border-gray-800 bg-gray-900 p-6 md:grid-cols-2 lg:grid-cols-3">
