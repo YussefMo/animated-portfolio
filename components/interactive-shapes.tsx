@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
 const shapes = [
-  { type: "circle", size: 50 },
-  { type: "square", size: 40 },
-  { type: "triangle", size: 60 },
-  { type: "circle", size: 30 },
-  { type: "square", size: 50 },
-  { type: "triangle", size: 40 },
+  { type: "circle", size: 50, left: 15, top: 20 },
+  { type: "square", size: 40, left: 80, top: 60 },
+  { type: "triangle", size: 60, left: 70, top: 15 },
+  { type: "circle", size: 30, left: 25, top: 75 },
+  { type: "square", size: 50, left: 90, top: 35 },
+  { type: "triangle", size: 40, left: 10, top: 50 },
 ]
 
 export default function InteractiveShapes() {
@@ -44,8 +44,8 @@ export default function InteractiveShapes() {
           style={{
             width: shape.size,
             height: shape.size,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${shape.left}%`,
+            top: `${shape.top}%`,
           }}
           whileHover={{ scale: 1.2 }}
           transition={{ type: "spring", stiffness: 300 }}
