@@ -100,39 +100,36 @@ export default function AboutMe() {
                     👋 <strong>Hey, I&apos;m Youssef Mohammed!</strong>
                   </p>
                   <p className="mb-4">
-                    A <strong>Frontend Developer</strong> with a love for clean
-                    UIs, fast performance, and pixel-perfect design. I&apos;m
-                    all in on the modern web—working with <strong>React</strong>
-                    , <strong>Next.js</strong>, and{' '}
-                    <strong>Tailwind CSS</strong> to build responsive and
-                    accessible SPAs & full-stack apps.
+                    A passionate <strong>Frontend Engineer</strong> focused on building
+                    modern, scalable, and user-friendly web applications. I specialize in
+                    <strong> React.js</strong>, <strong>Next.js</strong>, and
+                    <strong> Tailwind CSS</strong>, crafting responsive UIs and seamless
+                    user experiences.
                   </p>
                   <p className="mb-4">
-                    I dive deep into topics like{' '}
-                    <strong>React Server Components</strong>,{' '}
-                    <strong>Suspense</strong>, <strong>Next.js caching</strong>,
-                    and <strong>API design</strong> with Supabase. I’ve built
-                    and deployed real-world projects with features like{' '}
-                    <strong>
-                      authentication, dashboard UIs, dynamic routing
-                    </strong>
-                    , and even <strong>PPR (Partial Pre-Rendering)</strong>.
+                    I have hands-on experience delivering <strong>SaaS platforms</strong>,
+                    <strong>e-commerce dashboards</strong>, and apps powered by
+                    <strong>AI integrations</strong> and <strong>REST APIs</strong>.
+                    My projects include features like <strong>authentication</strong>,
+                    <strong>dynamic routing</strong>, <strong>state management</strong> with
+                    Redux & Context API, and optimized performance using
+                    <strong> Next.js caching</strong> and <strong>PPR (Partial Pre-Rendering)</strong>.
                   </p>
                   <p className="mb-4">
-                    Always experimenting with tools like{' '}
-                    <strong>React Hook Form</strong>,{' '}
-                    <strong>useTransition</strong>, and{' '}
-                    <strong>useOptimistic</strong>, and pushing the limits of{' '}
-                    <strong>Next.js App Router</strong>. I love turning ideas
-                    into real products that feel fast, intuitive, and fun to
-                    use.
+                    Recently, I&apos;ve been expanding my skills into <strong>cross-platform
+                      development</strong> using <strong>Expo</strong> and <strong>React Native</strong>,
+                    where I&apos;ve translated key features of a <strong>SaaS web app</strong> into
+                    a fully functional <strong>mobile application</strong>. This allows me to
+                    deliver consistent user experiences across both web and mobile platforms.
                   </p>
                   <p>
-                    Let’s <strong>build something cool</strong> together—because
-                    the web is evolving, and{' '}
-                    <strong>I’m riding the wave 🚀</strong> ⚡🔥
+                    I love turning ideas into polished products that are fast,
+                    intuitive, and reliable. Let’s <strong>build impactful web
+                      experiences</strong> together—because the web is evolving, and
+                    <strong>I’m building for the future 🚀🔥</strong>
                   </p>
                 </div>
+
               </div>
             </div>
           </div>
