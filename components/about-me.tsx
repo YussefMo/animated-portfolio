@@ -89,9 +89,10 @@ export default function AboutMe() {
               <div className="prose prose-invert max-w-none text-center md:text-left">
                 {/* Mobile description */}
                 <p className="text-lg leading-relaxed md:hidden">
-                  Frontend Artisan 🎨 and Full Stack Explorer 🧠. Crafting
-                  sleek, responsive apps with React & Next.js. From UI polish to
-                  server logic—building smooth, modern web experiences. ⚛️💡🚀
+                  Frontend Engineer ⚛️ crafting modern web apps with React & Next.js and
+                  bringing them cross-platform with Expo & React Native. From dashboards and
+                  API-driven SaaS features to AI integrations, I build sleek, fast, and
+                  scalable experiences. 🚀
                 </p>
 
                 {/* Desktop description */}
