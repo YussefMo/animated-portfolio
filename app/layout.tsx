@@ -1,8 +1,9 @@
-import type React from 'react';
-import type { Metadata } from 'next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { Metadata } from 'next';
+import type React from 'react';
 import './globals.css';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: 'Youssef Mohammed Ali - Frontend Developer (React.js,Next.js)',
@@ -21,24 +22,11 @@ export default function RootLayout({
       <body>
         <SpeedInsights />
         <Analytics />
-        <ToastContainer
-          position="top-center"
-          autoClose={2000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-          transition={Bounce}
-        />
+        <Toaster />
         {children}
       </body>
     </html>
   );
 }
 
-import './globals.css';
-import { Bounce, ToastContainer } from 'react-toastify';
+

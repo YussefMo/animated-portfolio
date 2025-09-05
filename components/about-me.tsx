@@ -1,42 +1,44 @@
 'use client';
 import {
-  FaJs,
-  FaHtml5,
-  FaSass,
   FaCss3Alt,
-  FaPython,
+  FaFigma,
   FaGitAlt,
+  FaHtml5,
+  FaJs,
   FaReact,
-  FaFigma
+  FaSass
 } from 'react-icons/fa';
 
+import { BiLogoTypescript, BiLogoVisualStudio } from 'react-icons/bi';
+import { GiArtificialIntelligence } from "react-icons/gi";
+import { IoLogoFirebase } from "react-icons/io5";
 import {
-  SiTypescript,
-  SiRedux,
+  SiExpo,
   SiNextdotjs,
-  SiTailwindcss,
   SiReactquery,
-  SiVercel // ✅ Correct Vercel icon
+  SiRedux,
+  SiSupabase,
+  SiTailwindcss,
+  SiVercel
 } from 'react-icons/si';
-import { BiLogoVisualStudio } from 'react-icons/bi';
-import { TbBrandCpp } from 'react-icons/tb';
 
-import Image from 'next/image';
+import Experience from '@/components/Experience';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const skillsData = {
   'Programming Languages': [
-    { name: 'JavaScript', proficiency: 90, icon: FaJs },
-    { name: 'TypeScript', proficiency: 80, icon: SiTypescript },
+    { name: 'JavaScript', proficiency: 95, icon: FaJs },
+    { name: 'TypeScript', proficiency: 95, icon: BiLogoTypescript },
     { name: 'HTML', proficiency: 95, icon: FaHtml5 },
     { name: 'SASS', proficiency: 80, icon: FaSass },
     { name: 'CSS', proficiency: 90, icon: FaCss3Alt },
-    { name: 'Python', proficiency: 75, icon: FaPython },
-    { name: 'C++', proficiency: 65, icon: TbBrandCpp } // Or any C++ placeholder
   ],
   'Frameworks/Libraries': [
     { name: 'React', proficiency: 95, icon: FaReact },
+    { name: 'React Native', proficiency: 85, icon: FaReact },
     { name: 'Next.js', proficiency: 90, icon: SiNextdotjs },
+    { name: 'Expo', proficiency: 85, icon: SiExpo },
     { name: 'Tailwind CSS', proficiency: 90, icon: SiTailwindcss },
     { name: 'Redux Toolkit', proficiency: 85, icon: SiRedux },
     { name: 'React Query', proficiency: 90, icon: SiReactquery }
@@ -45,7 +47,10 @@ const skillsData = {
     { name: 'Git', proficiency: 98, icon: FaGitAlt },
     { name: 'Vercel', proficiency: 85, icon: SiVercel },
     { name: 'Figma', proficiency: 75, icon: FaFigma },
-    { name: 'VS Code', proficiency: 95, icon: BiLogoVisualStudio }
+    { name: 'VS Code', proficiency: 95, icon: BiLogoVisualStudio },
+    { name: 'AI IDEs (trae.ai - cursor)', proficiency: 95, icon: GiArtificialIntelligence },
+    { name: 'Firebase', proficiency: 90, icon: IoLogoFirebase },
+    { name: 'Supabase', proficiency: 90, icon: SiSupabase }
   ]
 };
 
@@ -131,6 +136,9 @@ export default function AboutMe() {
               </div>
             </div>
           </div>
+
+          <Experience />
+
           {/* Skills Section */}
           <div>
             <h3 className="mb-8 text-center text-2xl font-bold md:text-3xl">

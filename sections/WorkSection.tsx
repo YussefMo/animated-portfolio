@@ -96,7 +96,7 @@ function WorkSection() {
               <Filter />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 border border-gray-800 bg-gray-900 p-6 max-h-[650px] overflow-auto">
+          <div className="grid max-h-[650px] grid-cols-1 gap-6 overflow-auto border border-gray-800 bg-gray-900 p-6 md:grid-cols-2 lg:grid-cols-3">
             <Suspense
               fallback={
                 <div className="text-center text-white">

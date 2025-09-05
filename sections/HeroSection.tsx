@@ -23,7 +23,7 @@ function HeroSection() {
             Hey! It&apos;s Youssef Mohammed Ali
           </h1>
           <h2 className="mb-8 text-xl text-gray-300 md:text-2xl">
-            🚀 Frontend Developer (React.js | Next.js) | Tech Explorer
+            🚀 Frontend Engineer (React.js | Next.js) (React Native | Expo) | Tech Explorer
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <ScrollLink to="work" smooth={true} duration={500}>

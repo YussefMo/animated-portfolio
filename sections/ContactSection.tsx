@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { FileText } from 'lucide-react';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 import { createContactReq } from '@/lib/portfolioApi';
 
 type FormValues = {
