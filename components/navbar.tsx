@@ -120,7 +120,7 @@ export default function Navbar() {
             <Github size={24} />
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/youssef-mohammed-ali-4608492a5/"
+            href="https://www.linkedin.com/in/ymdev"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 transition-colors duration-300 hover:text-white"
