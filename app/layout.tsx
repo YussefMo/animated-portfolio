@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'Youssef Mohammed Ali Portfolio',
     images: [
       {
-        url: 'https://ymdev.me/preview.png', // upload preview.png to /public
+        url: 'https://ymdev.me/preview.png',
         width: 1200,
         height: 630,
         alt: 'Youssef Mohammed Ali Portfolio - YoussefMo (YmDev)',
