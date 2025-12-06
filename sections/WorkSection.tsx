@@ -76,10 +76,7 @@ function ProjectsGrid() {
 // Client component wrapper
 function WorkSection() {
   return (
-    <section
-      id="work"
-      className="bg-gradient-to-b from-gray-900 to-black py-20"
-    >
+    <main id="work" className="bg-gradient-to-b from-gray-900 to-black py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
@@ -115,7 +112,7 @@ function WorkSection() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </main>
   );
 }
 
