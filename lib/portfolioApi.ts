@@ -7,7 +7,7 @@ export async function getAllProjects(): Promise<Project[] | null> {
     .orderBy('createdAt', 'asc')
     .get();
 
-  // @ts-ignore
+  // @ts-expect-error - Firebase type inference limitation
   return products.docs.map((doc) => ({
     id: doc.id,
     ...doc.data()
@@ -40,8 +40,9 @@ export async function createContactReq(data: ContactFormProps) {
   try {
     const docRef = await db.collection('messages').add(payload);
     return { id: docRef.id, ...payload };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating contact request:', error);
-    throw new Error(`Failed to submit contact request: ${error.message}`);
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error(`Failed to submit contact request: ${message}`);
   }
 }

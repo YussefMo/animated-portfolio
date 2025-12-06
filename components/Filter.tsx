@@ -9,7 +9,6 @@ interface ButtonProps {
   filter: string;
   children: ReactNode;
   activeFilter: string;
-  // eslint-disable-next-line no-unused-vars
   filterHandler: (filter: string) => void;
 }
 

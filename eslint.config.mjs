@@ -1,34 +1,32 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
-import prettierPlugin from 'eslint-plugin-prettier';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname
-});
+import tseslint from 'typescript-eslint';
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals'),
   {
-    plugins: {
-      prettier: prettierPlugin
+    ignores: ['.next/**', 'node_modules/**', 'out/**']
+  },
+  ...tseslint.configs.recommended,
+  {
+    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
     },
     rules: {
-      'react/jsx-uses-react': 'off',
-      'react/react-in-jsx-scope': 'off',
-      'no-unused-vars': [
+      '@typescript-eslint/no-unused-vars': [
         'error',
         { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
-      ]
+      ],
+      '@typescript-eslint/no-explicit-any': 'warn'
     }
   }
 ];
 
 export default eslintConfig;
-
 
 // npm install --save-dev prettier-plugin-tailwindcss
 // npm install --save-dev eslint-plugin-prettier prettier

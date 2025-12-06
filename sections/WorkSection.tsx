@@ -23,8 +23,10 @@ function ProjectsGrid() {
       try {
         const data = await getAllProjects();
         setProjects(data);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        const message =
+          err instanceof Error ? err.message : 'An error occurred';
+        setError(message);
       } finally {
         setLoading(false);
       }
@@ -93,7 +95,9 @@ function WorkSection() {
           </h2>
           <div className="mb-6 w-full sm:mb-3">
             <div className="flex flex-wrap justify-end gap-2">
-              <Suspense fallback={<div className="text-white">Loading filters...</div>}>
+              <Suspense
+                fallback={<div className="text-white">Loading filters...</div>}
+              >
                 <Filter />
               </Suspense>
             </div>

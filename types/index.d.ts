@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // Type definitions for portfolio project
 
 interface ExtraSection {
