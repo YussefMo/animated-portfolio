@@ -2,16 +2,20 @@
 
 import { db } from '@/firebase/admin';
 export async function getAllProjects(): Promise<Project[] | null> {
-  const products = await db
-    .collection('projects')
-    .orderBy('createdAt', 'asc')
-    .get();
-
-  // @ts-expect-error - Firebase type inference limitation
-  return products.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data()
-  }));
+  try {
+    const products = await db
+      .collection('projects')
+      .orderBy('createdAt', 'asc')
+      .get();
+    return products.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    })) as Project[];
+  } catch (error: unknown) {
+    console.error('Error fetching projects:', error);
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error(`Failed to fetch projects: ${message}`);
+  }
 }
 
 export async function createContactReq(data: ContactFormProps) {
