@@ -126,6 +126,12 @@ export const services: ServiceItem[] = [
     description:
       'Pixel-precise UIs with Tailwind CSS, React Hook Form, and React 19 hooks including useTransition and useOptimistic.',
     icon: 'Monitor'
+  },
+  {
+    title: 'AI & Agent Integration',
+    description:
+      'LLM-powered features and conversational agent chatbots. OpenAI API, tool-augmented agents, retrieval-augmented generation, and real-time streaming interfaces.',
+    icon: 'Bot'
   }
 ];
 

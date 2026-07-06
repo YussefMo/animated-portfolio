@@ -54,7 +54,7 @@ export default function MagneticButton({
   }, []);
 
   const baseStyles =
-    'inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-label-caps transition-colors duration-300';
+    'inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-label-caps transition-colors duration-300 cursor-pointer';
 
   const variants = {
     primary: 'bg-primary-container text-on-primary-container hover:bg-primary-fixed-dim',
