@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Code2 } from 'lucide-react';
 import GlassPanel from './GlassPanel';
 import MagneticButton from './MagneticButton';
 
@@ -56,11 +56,11 @@ export default function ProjectShowcaseCard({
           <h3 className="mb-4 font-headline-md text-headline-md text-text-primary">
             {project.title}
           </h3>
-          <p className="mb-8 font-body-md text-body-md text-text-secondary">
+          <p className="mb-6 font-body-md text-body-md text-text-secondary">
             {project.description}
           </p>
 
-          <div className="mt-auto space-y-4 border-t border-border-glass pt-6">
+          <div className="mt-auto space-y-3 border-t border-border-glass pt-6">
             <div className="flex justify-between items-center">
               <span className="font-code text-code-tag text-text-secondary">ROLE</span>
               <span className="font-label-caps text-label-caps text-text-primary text-right">
@@ -73,7 +73,7 @@ export default function ProjectShowcaseCard({
                 {project.tags.slice(0, 4).join(', ')}
               </span>
             </div>
-            <div className="pt-4">
+            <div className="space-y-2 pt-2">
               <MagneticButton
                 variant="glass"
                 href={project.liveDemo || project.repo}
@@ -81,6 +81,14 @@ export default function ProjectShowcaseCard({
                 className="w-full rounded-md px-4 py-3"
               >
                 {project.ctaLabel || 'View Project'}
+              </MagneticButton>
+              <MagneticButton
+                variant="glass"
+                href={project.repo}
+                icon={<Code2 className="h-4 w-4" />}
+                className="w-full rounded-md px-4 py-3"
+              >
+                View Source
               </MagneticButton>
             </div>
           </div>
