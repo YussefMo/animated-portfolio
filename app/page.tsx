@@ -1,37 +1,41 @@
-import LoaderTrigger from '@/components/client/LoaderTrigger';
-import CustomCursor from '@/components/custom-cursor';
-import InteractiveShapes from '@/components/interactive-shapes';
-import Navbar from '@/components/navbar';
-import AboutSection from '@/sections/AboutSection';
-import ContactSection from '@/sections/ContactSection';
-import FooterSection from '@/sections/FooterSection';
-import HeroSection from '@/sections/HeroSection';
-import ServicesSection from '@/sections/ServicesSection';
-import WorkSection from '@/sections/WorkSection';
+'use client';
+
+import { useState } from 'react';
+import BackgroundLayers from '@/components/components-parts/BackgroundLayers';
+import CustomCursor from '@/components/components-parts/CustomCursor';
+import Loader from '@/components/components-parts/Loader';
+import Navigation from '@/components/components-parts/Navigation';
+import ContactModal from '@/components/components-parts/ContactModal';
+import HeroSection from '@/components/sections/HeroSection';
+import TrajectorySection from '@/components/sections/TrajectorySection';
+import ArsenalSection from '@/components/sections/ArsenalSection';
+import ShowcaseSection from '@/components/sections/ShowcaseSection';
+import AboutSection from '@/components/sections/AboutSection';
+import ServicesSection from '@/components/sections/ServicesSection';
+import FooterSection from '@/components/sections/FooterSection';
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
-    <LoaderTrigger>
+    <>
+      {loading && <Loader onComplete={() => setLoading(false)} />}
       <CustomCursor />
-      <Navbar />
-      <InteractiveShapes />
-      {/* Hero Section with Animated Boxes */}
-      <HeroSection />
+      <BackgroundLayers />
+      <Navigation onConnect={() => setContactOpen(true)} />
 
-      {/* About Section */}
-      <AboutSection />
+      <main className="relative z-10">
+        <HeroSection onConnect={() => setContactOpen(true)} />
+        <TrajectorySection />
+        <ArsenalSection />
+        <ShowcaseSection />
+        <AboutSection />
+        <ServicesSection />
+        <FooterSection />
+      </main>
 
-      {/* Services Section */}
-      <ServicesSection />
-
-      {/* Change Work Section */}
-      <WorkSection />
-
-      {/* Change Contact Section */}
-      <ContactSection />
-
-      {/* Footer with Social Links */}
-      <FooterSection />
-    </LoaderTrigger>
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+    </>
   );
 }

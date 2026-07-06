@@ -1,143 +1,102 @@
-# Portfolio - Youssef Mohammed Ali
+# Portfolio — Youssef Mohammed Ali
 
-![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?style=flat-square&logo=next.js)
-![React](https://img.shields.io/badge/React-19.0.0-blue?style=flat-square&logo=react)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.0-38B2AC?style=flat-square&logo=tailwind-css)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.6.3-0055FF?style=flat-square&logo=framer)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38B2AC?style=flat-square&logo=tailwind-css)
+![GSAP](https://img.shields.io/badge/GSAP-3-88CE02?style=flat-square&logo=greensock)
 
-A modern, responsive portfolio website built with Next.js, React, and
-TailwindCSS, featuring animated UI elements and a clean, professional design.
+A modern portfolio built with Next.js and Tailwind v4, featuring a glassmorphic dark theme, WebGL backgrounds, and GSAP-powered animations.
 
-live web:[Portfolio](https://youssef-portfolio-gold.vercel.app/)
+**[ymdev.me](https://ymdev.me)**
 
-## ✨ Features
+## Tech stack
 
-- **Responsive Design** - Looks great on all devices from mobile to desktop
-- **Modern UI** - Clean, professional interface with animations and transitions
-- **Interactive Elements** - Custom cursor, animated boxes, and interactive
-  shapes
-- **Project Showcase** - Filterable project grid with modal details
-- **Contact Form** - Integrated form with validation using React Hook Form
-- **Animated Sections** - Smooth animations powered by Framer Motion
-- **Optimized Images** - Fast loading with Next.js Image optimization
-- **Accessibility** - Built with web accessibility best practices
+- **Next.js 16** — App Router, Turbopack
+- **React 19** — server components, strict TypeScript
+- **Tailwind CSS v4** — CSS-driven config, no `tailwind.config.js`
+- **GSAP** — animations, ScrollTrigger reveals, magnetic hovers
+- **Lenis** — smooth scrolling synced to GSAP's ticker
+- **Firebase Admin** — server actions for projects and contact form
+- **Fonts** — Geist, Inter, JetBrains Mono via `next/font/google`
+- **React Hook Form + Sonner** — contact form with toast notifications
+- **Vercel Analytics & Speed Insights** — performance monitoring
 
-## 🛠️ Technologies
-
-### Frontend
-
-- **Next.js** - React framework with App Router
-- **React** - UI library
-- **TailwindCSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **React Hook Form** - Form validation
-- **React Toastify** - Toast notifications
-- **React Scroll** - Smooth scrolling
-- **TypeScript** - Type safety
-
-### Development
-
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **Turbopack** - Fast development builds
-
-## 📋 Project Structure
-
-```
-├── app/                  # Next.js App Router
-├── components/           # Reusable UI components
-│   ├── client/           # Client-side components
-│   └── ui/               # UI primitives
-├── hooks/                # Custom React hooks
-├── lib/                  # Utility functions and API
-├── public/               # Static assets
-│   └── images/           # Project images
-├── sections/             # Page sections
-└── types/                # TypeScript type definitions
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or later)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-
-   ```bash
-   git clone https://github.com/YussefMo/animated-portfolio.git
-   cd portfolio
-   ```
-
-2. Install dependencies
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. Run the development server
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 🏗️ Build and Deployment
+## Getting started
 
 ```bash
-# Build for production
-npm run build
-# or
-yarn build
-
-# Start production server
-npm run start
-# or
-yarn start
+npm install
+npm run dev     # starts Turbopack dev server on http://localhost:3000
 ```
 
-## 🧩 Key Components
+Environment variables in `.env.local` (Firebase Admin):
 
-- **HeroSection** - Landing section with animated boxes and call-to-action
-  buttons
-- **AboutSection** - Developer profile with skills and experience
-- **WorkSection** - Project showcase with filtering capabilities
-- **ContactSection** - Contact form with validation
-- **AnimatedBoxes** - Background animation component
-- **CustomCursor** - Enhanced cursor experience
-- **InteractiveShapes** - Dynamic background elements
+```
+FIREBASE_PROJECT_ID
+FIREBASE_CLIENT_EMAIL
+FIREBASE_PRIVATE_KEY
+```
 
-## 📱 Responsive Design
+## Verification
 
-The portfolio is fully responsive and optimized for:
+```bash
+npm run lint          # ESLint
+npm run type-check    # tsc --noEmit
+npm run build         # production build
+```
 
-- Mobile devices
-- Tablets
-- Desktops
-- Large screens
+## Project structure
 
-## 🎨 Styling
+```
+app/                           # App Router (layout, page, globals.css)
+├── globals.css                # Tailwind v4 @theme tokens, utilities
+└── layout.tsx                 # Fonts, metadata, analytics, scroll wrapper
 
-Styling is primarily handled through TailwindCSS with:
+components/
+├── components-parts/          # Animated & shared components
+│   ├── Navigation.tsx         # Floating pill nav with scroll-spy
+│   ├── ContactModal.tsx       # Contact form → Firestore
+│   ├── AuroraShader.tsx       # WebGL background shader
+│   ├── WarpNet.tsx            # Interactive canvas net
+│   ├── SmoothScrolling.tsx    # Lenis + GSAP ticker
+│   ├── MagneticButton.tsx     # Magnetic hover CTA
+│   ├── SectionReveal.tsx      # GSAP ScrollTrigger wrapper
+│   └── ...                    # GlassPanel, SkillModule, ProjectShowcaseCard, etc.
+└── sections/                  # Page sections
+    ├── HeroSection.tsx        # Matrix — hero with aurora + CTAs
+    ├── TrajectorySection.tsx  # Experience timeline
+    ├── ArsenalSection.tsx     # Skills grid (expandable)
+    ├── ShowcaseSection.tsx    # Projects (Firestore)
+    ├── AboutSection.tsx       # Bio + profile
+    ├── ServicesSection.tsx    # Expertise cards
+    └── FooterSection.tsx      # Socials + copyright
 
-- Custom gradients
-- Responsive typography
-- Dark theme
-- Animation utilities
+lib/
+├── data.ts                    # All static data (bio, skills, experience, socials)
+├── portfolioApi.ts            # Server actions (getAllProjects, createContactReq)
+├── utils.ts                   # cn() classname merge
+└── seed.ts                    # Firestore seed utility
 
-## 📞 Contact
+firebase/
+└── admin.ts                   # Firebase Admin SDK init
 
-Youssef Mohammed Ali -
-[Contact through the website](https://youssef-portfolio-gold.vercel.app/)
+hooks/
+└── useOutsideClick.ts         # Click-outside hook
 
----
+types/
+└── index.d.ts                 # Project, ContactFormProps, ExperienceItem, etc.
+```
 
-Built with ❤️ using Next.js and React
+## Design system
+
+The visual style follows an "Elite Engineering Dark" theme — glassmorphism with a deep indigo palette, backdrop blurs, and pill-shaped UI elements.
+
+- **Colors** defined as Tailwind v4 `@theme` tokens in `app/globals.css`
+- **Glass panels** via `.glass-panel` utility (`rgba(255,255,255,0.03)` + `blur(12px)` + `border`)
+- **Typography** — Geist for headings, Inter for body, JetBrains Mono for code tags
+- **Animation** — GSAP stagger reveals, magnetic hover buttons, Lenis smooth scroll
+
+## Data
+
+All static content lives in `lib/data.ts`. Projects are fetched from Firestore via `getAllProjects()`. The `Project` type supports optional `role` and `ctaLabel` fields for the showcase cards.
+
+`stitch_elite_engineering_signature_portfolio/` is a design reference folder. It is not source code.

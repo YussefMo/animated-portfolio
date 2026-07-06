@@ -20,6 +20,8 @@ interface Project {
   image: string;
   liveDemo: string;
   repo: string;
+  role?: string;
+  ctaLabel?: string;
   extraSections?: ExtraSection[];
   createdAt: string | { seconds: number; nanoseconds: number } | null;
 }
@@ -41,4 +43,33 @@ interface ContactFormProps {
   email: string;
   phoneNumber: string;
   message: string;
+}
+
+interface ExperienceItem {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  type: string;
+  logo: string;
+  skills: string[];
+  description?: string;
+}
+
+interface SkillItem {
+  name: string;
+  icon: string;
+  category: 'language' | 'framework' | 'tool';
+}
+
+interface ServiceItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface SocialLink {
+  label: string;
+  href: string;
+  icon: string;
 }

@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-06T18:30:00.000Z",
+  "title": "Design System: Elite Engineering Dark",
+  "extensions": {
+    "colorMeta": {
+      "signal-indigo": {
+        "role": "primary",
+        "displayName": "Signal Indigo",
+        "canonical": "#c0c1ff",
+        "tonalRamp": ["#0a0a1f", "#15153d", "#20205c", "#2b2b78", "#404095", "#6060b8", "#8989d7", "#b0b0f0", "#d4d4ff", "#f0f0ff"]
+      },
+      "command-lavender": {
+        "role": "primary-tint",
+        "displayName": "Command Lavender",
+        "canonical": "#e1dfff",
+        "tonalRamp": ["#0f0f24", "#1e1e48", "#2d2d6c", "#3c3c90", "#5a5ab4", "#7878d0", "#9898e4", "#b8b8f4", "#d4d4fc", "#efefff"]
+      },
+      "void-black": {
+        "role": "neutral",
+        "displayName": "Void Black",
+        "canonical": "#030303",
+        "tonalRamp": ["#030303", "#0a0a0a", "#121212", "#1a1a1a", "#222222", "#2b2b2b", "#333333", "#3d3d3d", "#474747", "#525252"]
+      },
+      "deep-slate": {
+        "role": "neutral",
+        "displayName": "Deep Slate",
+        "canonical": "#051424",
+        "tonalRamp": ["#010810", "#020e1a", "#031425", "#051a30", "#08203b", "#0a2747", "#0d2f53", "#103860", "#13416c", "#164a78"]
+      },
+      "bright-ore": {
+        "role": "on-neutral",
+        "displayName": "Bright Ore",
+        "canonical": "#f8fafc",
+        "tonalRamp": ["#f8fafc", "#f1f5f9", "#e2e8f0", "#cbd5e1", "#94a3b8", "#64748b", "#475569", "#334155", "#1e293b", "#0f172a"]
+      },
+      "dim-steel": {
+        "role": "on-neutral-muted",
+        "displayName": "Dim Steel",
+        "canonical": "#94a3b8",
+        "tonalRamp": ["#f8fafc", "#f1f5f9", "#e2e8f0", "#cbd5e1", "#94a3b8", "#7a8a9b", "#64748b", "#4b5566", "#374151", "#1f2937"]
+      },
+      "surface-glass": {
+        "role": "neutral-surface",
+        "displayName": "Surface Glass",
+        "canonical": "rgba(255, 255, 255, 0.03)",
+        "tonalRamp": []
+      },
+      "border-glass": {
+        "role": "neutral-border",
+        "displayName": "Border Glass",
+        "canonical": "rgba(255, 255, 255, 0.08)",
+        "tonalRamp": []
+      },
+      "indigo-glow": {
+        "role": "accent-glow",
+        "displayName": "Indigo Glow",
+        "canonical": "rgba(99, 102, 241, 0.15)",
+        "tonalRamp": []
+      }
+    },
+    "typographyMeta": {
+      "display-hero": { "displayName": "Display Hero", "purpose": "Hero section h1 only. One line. Mobile scales to 48px." },
+      "headline-lg": { "displayName": "Headline LG", "purpose": "Section headers with bottom border-glass divider." },
+      "headline-md": { "displayName": "Headline MD", "purpose": "Card titles, modal headers, project names." },
+      "body-lg": { "displayName": "Body LG", "purpose": "Hero subtext. Capped at 72ch." },
+      "body-md": { "displayName": "Body MD", "purpose": "Body copy, descriptions. Capped at 70ch." },
+      "label-caps": { "displayName": "Label Caps", "purpose": "Navigation, buttons, metadata. All-caps with 0.1em tracking." },
+      "code-tag": { "displayName": "Code Tag", "purpose": "Tech stacks, system labels, dates. JetBrains Mono only." }
+    },
+    "shadows": [
+      {
+        "name": "indigo-glow",
+        "value": "0 0 40px rgba(99, 102, 241, 0.15)",
+        "purpose": "Nav bar atmospheric glow. The only persistent shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        "purpose": "Magnetic button hover transition. GSAP power2.out equivalent."
+      },
+      {
+        "name": "ease-reveal",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Section scroll reveals. GSAP power3.out equivalent."
+      }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill-shaped CTA with magnetic hover. The system's only solid-accent button.",
+      "html": "<button class=\"ds-btn-primary\">DEPLOY PROJECT</button>",
+      "css": ".ds-btn-primary { background: #c0c1ff; color: #4b4d83; padding: 16px 32px; border-radius: 9999px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; transition: opacity 0.3s, transform 0.3s; display: inline-flex; align-items: center; gap: 8px; } .ds-btn-primary:hover { opacity: 0.9; transform: scale(1.05); } .ds-btn-primary:focus-visible { outline: 2px solid #c0c1ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Glass Button",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "Secondary action button with glassmorphic style and magnetic hover.",
+      "html": "<button class=\"ds-btn-glass\">VIEW SOURCE</button>",
+      "css": ".ds-btn-glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); color: #f8fafc; padding: 16px 32px; border-radius: 9999px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 1; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, transform 0.3s; display: inline-flex; align-items: center; gap: 8px; } .ds-btn-glass:hover { background: rgba(255, 255, 255, 0.05); transform: scale(1.05); } .ds-btn-glass:focus-visible { outline: 2px solid #c0c1ff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Floating pill nav with glassmorphic surface and indigo glow. Fixed at top, centered.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">YoussefMo</span><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Matrix</a><a class=\"ds-nav-link\" href=\"#\">Trajectory</a><button class=\"ds-btn-primary ds-btn-primary--sm\">CONNECT</button></nav>",
+      "css": ".ds-nav { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 9999px; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px; box-shadow: 0 0 40px rgba(99, 102, 241, 0.15); } .ds-nav-brand { font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.04em; color: #c0c1ff; } .ds-nav-link { font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; text-decoration: none; transition: color 0.3s; } .ds-nav-link:hover { color: #f8fafc; } .ds-nav-link--active { color: #f8fafc; border-bottom: 2px solid #c0c1ff; padding-bottom: 4px; } .ds-btn-primary--sm { padding: 8px 24px; }"
+    },
+    {
+      "name": "Glass Panel",
+      "kind": "card",
+      "refersTo": "glass-panel",
+      "description": "Universal glassmorphic content container. 12px blur, 1px white border, rounded-xl.",
+      "html": "<div class=\"ds-glass-panel\"><h3 class=\"ds-card-title\">Card Title</h3><p class=\"ds-card-body\">Content goes here with body-md typography.</p></div>",
+      "css": ".ds-glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 32px; transition: background 0.3s; } .ds-glass-panel:hover { background: rgba(255, 255, 255, 0.05); } .ds-card-title { font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 32px; font-weight: 600; line-height: 1.3; color: #f8fafc; margin: 0 0 16px; } .ds-card-body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.6; color: #94a3b8; margin: 0; }"
+    },
+    {
+      "name": "Tech Tag",
+      "kind": "chip",
+      "refersTo": "tech-tag",
+      "description": "Small monospaced pill for tech stack labels. Rounded-md with subtle fill.",
+      "html": "<span class=\"ds-tech-tag\">TypeScript</span>",
+      "css": ".ds-tech-tag { background: #122131; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; padding: 4px 12px; font-family: JetBrains Mono, ui-monospace, monospace; font-size: 12px; font-weight: 400; line-height: 1; color: #f8fafc; display: inline-block; }"
+    },
+    {
+      "name": "Skill Module",
+      "kind": "custom",
+      "refersTo": "skill-module",
+      "description": "Arsenal section skill card with Material Symbols icon, code label, and hover scale.",
+      "html": "<div class=\"ds-skill-module\"><span class=\"ds-skill-code\">ARSN-01</span><span class=\"ds-skill-icon\">javascript</span><span class=\"ds-skill-name\">JavaScript</span></div>",
+      "css": ".ds-skill-module { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 24px; position: relative; overflow: hidden; transition: border-color 0.3s; } .ds-skill-module:hover { border-color: rgba(192, 193, 255, 0.3); } .ds-skill-code { position: absolute; top: 8px; right: 8px; font-family: JetBrains Mono, ui-monospace, monospace; font-size: 10px; color: rgba(148, 163, 184, 0.5); } .ds-skill-icon { font-size: 36px; color: #c0c1ff; display: block; margin-bottom: 16px; transition: transform 0.3s; } .ds-skill-module:hover .ds-skill-icon { transform: scale(1.1); } .ds-skill-name { font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #f8fafc; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Command Center",
+    "overview": "A precision-engineered portfolio interface that feels like a high-performance terminal for a developer's identity. Every surface, transition, and interaction is deliberate — nothing decorative, nothing accidental. The aesthetic draws from developer tools (Linear, Vercel) and dark-mode command centers: deep void backgrounds, glassmorphic overlays, indigo signal colors, and monospaced code tags. The system rejects template-portfolio clichés: no gradient text, no identical card grids, no over-animated scroll sections. Glassmorphism is used functionally (to separate content from background noise), not decoratively. Motion is GSAP-driven with exponential ease-out curves and full prefers-reduced-motion support.",
+    "keyCharacteristics": [
+      "True dark foundation (#030303) with glassmorphic surface layers",
+      "Indigo/lavender accent palette — one signal color, used sparingly",
+      "Geist/Inter/JetBrains Mono font stack — geometric display, neutral body, technical labels",
+      "Magnetic hover interactions with exponential ease-out (no bounce, no elastic)",
+      "Staggered GSAP ScrollTrigger reveals that enhance visible content, not gate it"
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Signal Indigo (#c0c1ff) is used on ≤10% of any screen. Its rarity is the point. If more than one button, one nav highlight, and one section accent use it simultaneously, it's too much.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark Tower Rule",
+        "body": "Background layers (void black, radial gradient, warp net, aurora shader) must never compete with content. Foundation layers are z-index -20 through -10 and pointer-events: none. If a background element distracts from body text, it's too loud.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tight Headline Rule",
+        "body": "Display and headline tiers use tight leading (1.1–1.3) and negative tracking. Body tiers use generous leading (1.6) and neutral tracking. Never swap these: tight body copy is unreadable; loose headlines feel weak.",
+        "section": "typography"
+      },
+      {
+        "name": "The Code-Only Mono Rule",
+        "body": "JetBrains Mono is for system labels and code references only. Never for headings, body copy, or navigation labels. If it's not a code-tag context, it's not JetBrains Mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest. Glow appears only on the nav bar (permanent) and active timeline dots (state-driven). Never box-shadow a card, button, or text container.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Frost, Not Fog Rule",
+        "body": "Backdrop-filter blur radius is always 12px. Below 8px, the glass effect is invisible against the dark canvas. Above 16px, it turns into fog and obscures the background animation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Signal Indigo (#c0c1ff) on ≤10% of any screen. One primary button, one nav highlight, one accent dot at a time.",
+      "Do use glass panels (.glass-panel) for all major content containers — cards, nav, modals, info panels.",
+      "Do pair every glass panel with a 1px border-glass border and 12px backdrop-blur.",
+      "Do use Label Caps typography for all navigation, buttons, and metadata (ROLE/TECH).",
+      "Do use Code Tag typography exclusively for system labels (SYS.*, ARSN-xx), tech stacks, and dates.",
+      "Do use GSAP ScrollTrigger with `start: 'top 85%'` for section reveals. Content must be visible by default."
+    ],
+    "donts": [
+      "Don't use box-shadow on cards, buttons, or text containers. The nav bar is the only element with a glow.",
+      "Don't use gradient text (background-clip: text). Solid Signal Indigo or Bright Ore only.",
+      "Don't use bounce or elastic easing curves. Exponential ease-out (power2.out, power3.out) exclusively.",
+      "Don't add an eyebrow (small all-caps kicker) above every section heading.",
+      "Don't use JetBrains Mono for headings, body copy, or navigation.",
+      "Don't invent new colors. The palette is closed.",
+      "Don't ship animations without `prefers-reduced-motion: reduce` fallback.",
+      "Don't look like a template portfolio — no identical card grids, no hero-metric layouts."
+    ]
+  }
+}

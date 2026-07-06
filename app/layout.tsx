@@ -1,10 +1,29 @@
-import SmoothScrolling from '@/components/SmoothScrolling';
+import type { Metadata } from 'next';
+import { Geist, Inter, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import type { Metadata } from 'next';
-import type React from 'react';
 import { Toaster } from 'sonner';
+import type React from 'react';
+import SmoothScrolling from '@/components/components-parts/SmoothScrolling';
 import './globals.css';
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+  display: 'swap'
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title:
@@ -52,7 +71,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Youssef Mohammed Ali (YoussefMo | YmDev) - Frontend Engineer',
     description:
-      'Frontend Engineer specializing in React, Next.js, Expo, and React Native. Portfolio of Youssef Mohammed Ali (YoussefMo | YmDev).',
+      'Frontend Engineer specializing in React, Next.js, Expo, and React Native. Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev).',
     images: ['https://ymdev.me/preview.png']
   },
   robots: {
@@ -104,37 +123,49 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${geist.variable} ${inter.variable} ${jetbrains.variable}`}>
       <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>
+      <body className="bg-background text-text-primary antialiased">
         <noscript>
           <div
             style={{
               padding: '20px',
               textAlign: 'center',
-              backgroundColor: '#000',
-              color: '#fff',
+              backgroundColor: '#030303',
+              color: '#f8fafc',
               minHeight: '100vh'
             }}
           >
-            <h1>Youssef Mohammed Ali - Frontend Developer</h1>
+            <h1>Youssef Mohammed Ali - Frontend Engineer</h1>
             <p>
               Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev), building
               modern apps with React, Next.js, and React Native.
             </p>
-            <p>
-              Please enable JavaScript to view the full interactive portfolio.
-            </p>
+            <p>Please enable JavaScript to view the full interactive portfolio.</p>
           </div>
         </noscript>
         <SpeedInsights />
         <Analytics />
-        <Toaster />
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              color: '#f8fafc',
+              backdropFilter: 'blur(12px)'
+            }
+          }}
+        />
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
