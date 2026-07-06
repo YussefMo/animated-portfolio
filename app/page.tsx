@@ -27,10 +27,10 @@ export default function Home() {
 
       <main className="relative z-10">
         <HeroSection onConnect={() => setContactOpen(true)} />
+        <AboutSection />
         <TrajectorySection />
         <ArsenalSection />
         <ShowcaseSection />
-        <AboutSection />
         <ServicesSection />
         <FooterSection />
       </main>

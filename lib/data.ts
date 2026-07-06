@@ -16,10 +16,10 @@ export const personal = {
 
 export const navLinks = [
   { label: 'Matrix', href: '#matrix' },
+  { label: 'About', href: '#about' },
   { label: 'Trajectory', href: '#trajectory' },
   { label: 'Arsenal', href: '#arsenal' },
   { label: 'Showcase', href: '#showcase' },
-  { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' }
 ];
 
@@ -79,8 +79,7 @@ export const skills: SkillItem[] = [
   // Languages
   { name: 'JavaScript', icon: 'javascript', category: 'language' },
   { name: 'TypeScript', icon: 'code_blocks', category: 'language' },
-  { name: 'HTML', icon: 'html', category: 'language' },
-  { name: 'SASS', icon: 'css', category: 'language' },
+  { name: 'Tailwind CSS', icon: 'css', category: 'language' },
   { name: 'CSS', icon: 'css', category: 'language' },
   // Frameworks / Libraries
   { name: 'React', icon: 'terminal', category: 'framework' },
@@ -107,38 +106,37 @@ export const services: ServiceItem[] = [
   {
     title: 'Full Stack Development',
     description:
-      'Crafting responsive and dynamic web apps with React, Next.js, and Supabase. Frontend to backend—seamless and scalable.',
-    icon: 'Braces'
+      'End-to-end web apps with React, Next.js, and Supabase. Server components, API routes, databases, auth wired and deployed.',
+    icon: 'Globe'
   },
   {
     title: 'React & Next.js Apps',
     description:
-      'Building interactive UIs using React Server Components, Suspense, and App Router. Embracing new features to optimize user experience.',
-    icon: 'FileText'
+      'Component architecture with Server Components, Suspense, and App Router. Performance tuned from the bundler up.',
+    icon: 'Component'
   },
   {
     title: 'API Integration',
     description:
-      'Working with RESTful APIs, Supabase endpoints, and Next.js server functions to power real-time and data-driven apps.',
-    icon: 'Github'
+      'REST APIs, WebSocket connections, and server actions. Real-time data flows, third-party services, Supabase and Firebase backends.',
+    icon: 'Webhook'
   },
   {
     title: 'Frontend Engineering',
     description:
-      'Crafting pixel-perfect UIs with Tailwind CSS, React Hook Form, and modern hooks like useTransition and useOptimistic.',
-    icon: 'MessageSquare'
+      'Pixel-precise UIs with Tailwind CSS, React Hook Form, and React 19 hooks including useTransition and useOptimistic.',
+    icon: 'Monitor'
   }
 ];
 
 export const about = {
   short:
-    'Frontend Engineer ⚛️ crafting modern web apps with React & Next.js and bringing them cross-platform with Expo & React Native. From dashboards and API-driven SaaS features to AI integrations, I build sleek, fast, and scalable experiences. 🚀',
+    'Frontend Engineer shipping production-grade apps with React, Next.js, and React Native. SaaS platforms, AI integrations, cross-platform mobile.',
   paragraphs: [
-    "👋 Hey, I'm Youssef Mohammed!",
-    'A passionate Frontend Engineer focused on building modern, scalable, and user-friendly web applications. I specialize in React.js, Next.js, and Tailwind CSS, crafting responsive UIs and seamless user experiences.',
-    'I have hands-on experience delivering SaaS platforms, e-commerce dashboards, and apps powered by AI integrations and REST APIs. My projects include features like authentication, dynamic routing, state management with Redux & Context API, and optimized performance using Next.js caching and PPR (Partial Pre-Rendering).',
-    "Recently, I've been expanding my skills into cross-platform development using Expo and React Native, where I've translated key features of a SaaS web app into a fully functional mobile application.",
-    "I love turning ideas into polished products that are fast, intuitive, and reliable. Let's build impactful web experiences together—because the web is evolving, and I'm building for the future 🚀🔥"
+    "I'm Youssef Mohammed Ali a Frontend Engineer focused on the layer between architecture and pixels. I build with React, Next.js, and TypeScript for the web, Expo and React Native for mobile, and Tailwind CSS for precision styling.",
+    'I ship SaaS platforms, e-commerce websites, and AI-integrated tools backed by REST APIs and real-time data. My work covers authentication, dynamic routing, state management (Redux, Context, Tanstack Query), and performance optimization through Next.js caching and Partial Pre-Rendering.',
+    'I translate web-scale features into fully functional websites and mobile apps. Key flows from production SaaS web apps authentication, real-time dashboards, push notifications rebuilt natively with Expo and React Native.',
+    'Portfolio anchored at ymdev.me, built with the same stack and standards I apply to production. Open to full-time roles, contract work, and engineering-led teams building things that ship.'
   ],
   image: '/me.jpg'
 };
