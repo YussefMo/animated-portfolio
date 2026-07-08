@@ -7,10 +7,11 @@ import Loader from '@/components/components-parts/Loader';
 import Navigation from '@/components/components-parts/Navigation';
 import ContactModal from '@/components/components-parts/ContactModal';
 import HeroSection from '@/components/sections/HeroSection';
+import AboutSection from '@/components/sections/AboutSection';
 import TrajectorySection from '@/components/sections/TrajectorySection';
+import DiagnositCaseStudy from '@/components/sections/DiagnositCaseStudy';
 import ArsenalSection from '@/components/sections/ArsenalSection';
 import ShowcaseSection from '@/components/sections/ShowcaseSection';
-import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import FooterSection from '@/components/sections/FooterSection';
 
@@ -26,9 +27,10 @@ export default function Home() {
       <Navigation onConnect={() => setContactOpen(true)} />
 
       <main className="relative z-10">
-        <HeroSection onConnect={() => setContactOpen(true)} />
+        <HeroSection />
         <AboutSection />
         <TrajectorySection />
+        <DiagnositCaseStudy />
         <ArsenalSection />
         <ShowcaseSection />
         <ServicesSection />

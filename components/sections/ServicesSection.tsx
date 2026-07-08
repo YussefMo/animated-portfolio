@@ -8,7 +8,7 @@ export default function ServicesSection() {
       <section id="services" className="py-section-padding">
         <div className="mx-auto max-w-container-max px-margin-mobile md:px-gutter">
           <h2 className="mb-16 border-b border-border-glass pb-4 font-headline-lg text-headline-lg text-text-primary">
-            My Expertise
+            Capabilities
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

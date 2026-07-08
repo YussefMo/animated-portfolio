@@ -8,11 +8,7 @@ import AuroraShader from '@/components/components-parts/AuroraShader';
 import CategoryChip from '@/components/components-parts/CategoryChip';
 import MagneticButton from '@/components/components-parts/MagneticButton';
 
-interface HeroSectionProps {
-  onConnect: () => void;
-}
-
-export default function HeroSection({ onConnect }: HeroSectionProps) {
+export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const statusRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -89,7 +85,10 @@ export default function HeroSection({ onConnect }: HeroSectionProps) {
           className="flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <MagneticButton
-            onClick={onConnect}
+            onClick={() => {
+              const el = document.getElementById('showcase');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
             icon={<ArrowRight className="h-4 w-4" />}
           >
             {hero.primaryCta.label}
