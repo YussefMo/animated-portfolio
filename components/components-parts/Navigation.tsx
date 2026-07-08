@@ -82,6 +82,7 @@ export default function Navigation({ onConnect }: NavigationProps) {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
+                aria-current={isActive ? 'page' : undefined}
                 className={`font-label-caps text-label-caps transition-colors duration-300 ${
                   isActive
                     ? 'border-b-2 border-primary pb-1 text-text-primary'
@@ -127,6 +128,9 @@ export default function Navigation({ onConnect }: NavigationProps) {
                 e.preventDefault();
                 handleNavClick(link.href);
               }}
+              aria-current={
+                active === link.href.replace('#', '') ? 'page' : undefined
+              }
               className={`font-label-caps text-label-caps ${
                 active === link.href.replace('#', '')
                   ? 'text-text-primary'

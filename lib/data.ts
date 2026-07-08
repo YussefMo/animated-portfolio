@@ -44,7 +44,8 @@ export const socials = [
 
 export const hero = {
   status: 'SYS.STATUS: ONLINE',
-  headline: 'I build SaaS products that ship.',
+  headline: 'Youssef Mohammed Ali Frontend Engineer',
+  subheadline: 'I build SaaS products that ship.',
   description:
     'Frontend architecture for production web and mobile applications. AI-powered experiences, reusable design systems, cross-platform delivery.',
   primaryCta: {

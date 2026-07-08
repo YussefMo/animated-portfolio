@@ -12,6 +12,7 @@ export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const statusRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const subRef = useRef<HTMLParagraphElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
@@ -29,6 +30,12 @@ export default function HeroSection() {
           { opacity: 0, y: 40 },
           { opacity: 1, y: 0, duration: 1 },
           '-=0.5'
+        )
+        .fromTo(
+          subRef.current,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8 },
+          '-=0.6'
         )
         .fromTo(
           descRef.current,
@@ -72,6 +79,10 @@ export default function HeroSection() {
         >
           {hero.headline}
         </h1>
+
+        <p ref={subRef} className="font-headline-md text-headline-md text-text-secondary mb-6 opacity-0">
+          {hero.subheadline}
+        </p>
 
         <p
           ref={descRef}
