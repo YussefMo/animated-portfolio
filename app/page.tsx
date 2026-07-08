@@ -31,13 +31,19 @@ const ShowcaseSection = dynamic(
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [contactOpen, setContactOpen] = useState(false);
+  const [contactMounted, setContactMounted] = useState(false);
+
+  function openContact() {
+    setContactMounted(true);
+    setContactOpen(true);
+  }
 
   return (
     <>
       {loading && <Loader onComplete={() => setLoading(false)} />}
       <CustomCursor />
       <BackgroundLayers />
-      <Navigation onConnect={() => setContactOpen(true)} />
+      <Navigation onConnect={openContact} />
 
       <main className="relative z-10">
         <HeroSection />
@@ -50,7 +56,9 @@ export default function Home() {
         <FooterSection />
       </main>
 
-      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      {contactMounted && (
+        <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      )}
     </>
   );
 }

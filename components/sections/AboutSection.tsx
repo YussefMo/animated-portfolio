@@ -21,7 +21,6 @@ export default function AboutSection() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  priority
                 />
               </div>
             </div>
