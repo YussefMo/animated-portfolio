@@ -1,4 +1,10 @@
-import * as Lucide from 'lucide-react';
+import { Github, Linkedin, MessageSquare } from 'lucide-react';
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Github,
+  Linkedin,
+  MessageSquare
+};
 
 interface SocialIconProps {
   href: string;
@@ -7,9 +13,7 @@ interface SocialIconProps {
 }
 
 export default function SocialIcon({ href, label, icon }: SocialIconProps) {
-  const Icon = Lucide[icon as keyof typeof Lucide] as React.ComponentType<{
-    className?: string;
-  }>;
+  const Icon = iconMap[icon];
 
   return (
     <a

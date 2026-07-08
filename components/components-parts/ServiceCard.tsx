@@ -1,5 +1,14 @@
+import { Bot, Component, Globe, Layers, Smartphone, Zap } from 'lucide-react';
 import GlassPanel from './GlassPanel';
-import * as Lucide from 'lucide-react';
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Layers,
+  Zap,
+  Component,
+  Smartphone,
+  Bot,
+  Globe
+};
 
 interface ServiceCardProps {
   title: string;
@@ -8,9 +17,7 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ title, description, icon }: ServiceCardProps) {
-  const Icon = Lucide[icon as keyof typeof Lucide] as React.ComponentType<{
-    className?: string;
-  }>;
+  const Icon = iconMap[icon];
 
   return (
     <GlassPanel hover className="p-6 text-center transition-all duration-300 md:text-left">

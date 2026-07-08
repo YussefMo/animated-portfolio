@@ -32,7 +32,7 @@ export default function Loader({ onComplete }: LoaderProps) {
 
       tl.to(barRef.current, {
         width: '100%',
-        duration: 2.5,
+        duration: 0.8,
         ease: 'power2.inOut'
       });
     }, containerRef);
