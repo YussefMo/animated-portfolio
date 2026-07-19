@@ -122,7 +122,7 @@ Responsibilities:
 - Reduced initial loading by 45%
 - Architected React Native mobile application
 - Achieved feature parity with web
-- Integrated 30+ REST API endpoints
+- Integrated 500+ REST API endpoints
 - Used Axios + TanStack Query
 - Implemented complex business logic
 - Internationalization (Next Intl)

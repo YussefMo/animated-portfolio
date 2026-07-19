@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * docx2pdf.js — Convert .docx CV to PDF via mammoth + puppeteer.
  *

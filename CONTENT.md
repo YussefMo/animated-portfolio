@@ -204,7 +204,7 @@ Component System
 
 React Native Architecture
 
-30+ API Integration
+500+ API Integration
 
 Internationalization
 
@@ -290,7 +290,7 @@ Whenever possible surface numbers.
 
 Examples
 
-30+ API endpoints
+500+ API endpoints
 
 70% smaller bundle
 

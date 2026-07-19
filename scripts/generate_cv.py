@@ -46,7 +46,7 @@ EXPERIENCES = [
             "Optimized landing page performance, cutting load times by 60% through render optimization, asset pipeline improvements, and strategic code splitting.",
             "Architected the React Native (Expo) mobile application with full feature parity to the web platform — authentication, real-time dashboards, push notifications (FCM).",
             "Designed and shipped a reusable design system adopted across the product, reducing new feature development time by 45%.",
-            "Integrated and maintained 30+ REST API endpoints with TanStack Query and Axios, implementing type-safe data fetching, optimistic updates, and cache invalidation.",
+            "Integrated and maintained 500+ REST API endpoints with TanStack Query and Axios, implementing type-safe data fetching, optimistic updates, and cache invalidation.",
             "Implemented full internationalization (i18n) across web and mobile with locale-aware routing, translated UI, and RTL layout support.",
         ]
     },
@@ -72,6 +72,7 @@ EDUCATION = {
 SKILLS = [
     "JavaScript (ES6), TypeScript, HTML5, CSS3",
     "React, Next.js, React Native, Expo",
+    "Angular, Bootstrap, PrimeNG, Angular Material",
     "TanStack Query, Axios, REST APIs",
     "Tailwind CSS, Design Systems, Component Architecture",
     "Firebase, Supabase",
@@ -245,6 +246,8 @@ def tailor_summary(summary, job_description):
         additions.append("Shipped reusable design systems that accelerated team velocity by 45%.")
     if "performance" in keywords:
         additions.append("Track record of measurable performance optimization — 60% faster page loads, 70% smaller bundles.")
+    if "angular" in keywords or "bootstrap" in keywords or "primeng" in keywords:
+        additions.append("Experience building enterprise frontend applications with Angular, TypeScript, and component libraries including PrimeNG and Bootstrap.")
     if additions:
         return summary + " " + " ".join(additions)
     return summary

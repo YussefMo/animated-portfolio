@@ -14,7 +14,7 @@ Diagnosit (Remote, UAE) | Jun 2025 – Present
 • Built the Live Patient Link feature, reducing initial load time by 45% and bundle size by 70%. 
 • Designed and implemented a reusable design system adopted across the product, reducing development time for new features by 45%. 
 • Architected the React Native (Expo) mobile application with feature parity to the web platform. 
-• Integrated and maintained 30+ main route REST API endpoints using Axios and TanStack Query. 
+• Integrated and maintained 500+ main route REST API endpoints using Axios and TanStack Query. 
 • Implemented complex business logic, state management, internationalization, and AI-ready frontend architecture while collaborating closely with backend and product teams. 
 Frontend Developer Intern —Web Masters (Remote, Egypt) | Apr 2025 – Jun 2025 
 • Collaborated with frontend developers using Git and GitHub workflows in an Agile environment. 

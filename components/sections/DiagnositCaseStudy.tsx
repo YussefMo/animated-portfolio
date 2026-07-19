@@ -21,7 +21,7 @@ const metrics = [
   { value: '~50%', label: 'Faster Feature Delivery' },
   { value: '60%', label: 'Faster Page Loads' },
   { value: '70%', label: 'Smaller Bundle Size' },
-  { value: '30+', label: 'API Endpoints Integrated' },
+  { value: '500+', label: 'API Endpoints Integrated' },
   { value: '~50%', label: 'Fewer Render Issues' },
   { value: '45%', label: 'Faster Dev Time (DS)' }
 ];
@@ -55,7 +55,7 @@ const highlights = [
   {
     icon: Gauge,
     title: 'API Layer',
-    body: 'Integrated and maintained 30+ REST API endpoints with TanStack Query and Axios. Type-safe data fetching, optimistic updates, cache invalidation, and error boundaries at scale.'
+    body: 'Integrated and maintained 500+ REST API endpoints with TanStack Query and Axios. Type-safe data fetching, optimistic updates, cache invalidation, and error boundaries at scale.'
   }
 ];
 

@@ -26,14 +26,6 @@ export default function FooterSection() {
                 icon={social.icon}
               />
             ))}
-            <a
-              href={footer.source}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-code-tag text-code-tag text-text-secondary transition-colors hover:text-primary"
-            >
-              Source
-            </a>
           </div>
         </div>
       </footer>
