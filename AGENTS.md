@@ -18,8 +18,17 @@ There are no tests. `npm run dev` starts the Turbopack dev server on `http://loc
 - Path alias `@/*` maps to `./*`.
 - `components/components-parts/` — shared and animated components (buttons, cards, nav, modals, backgrounds, cursor, loader).
 - `components/sections/` — page sections (Hero, Trajectory, Arsenal, Showcase, About, Services, Footer).
+- `components/projects/` — project case-study pieces (`ProjectMarkdown`).
+- `app/projects/[id]/page.tsx` — server-rendered project case study. `generateStaticParams()` returns `[]` and `dynamicParams` is on, so pages render on demand (no Firestore access during `next build`).
 - `lib/data.ts` — single source of truth for all static portfolio data (bio, experience, skills, services, socials).
 - `lib/portfolioApi.ts` — server actions that talk to Firebase Admin. Do not import this into client components.
+
+## Project case studies
+
+- `Project.post` holds long-form Markdown written in the admin panel.
+- Rendered by `components/projects/ProjectMarkdown.tsx` with `react-markdown` + `remark-gfm` + `remark-breaks` (single newlines become `<br>`). Raw HTML is intentionally disabled.
+- `getAllProjects()` strips `post` and returns a `hasPost` boolean; the showcase card only links to `/projects/[id]` when it is `true`.
+- Use `[text](https://url)` for links — the link text comes first.
 
 ## Animations
 
@@ -35,7 +44,8 @@ There are no tests. `npm run dev` starts the Turbopack dev server on `http://loc
   - `FIREBASE_CLIENT_EMAIL`
   - `FIREBASE_PRIVATE_KEY`
 - Server actions:
-  - `getAllProjects()` — reads `projects` collection.
+  - `getAllProjects()` — reads `projects` collection (summaries only, no `post`).
+  - `getProjectById(id)` — reads a single `projects` doc, including `post`.
   - `createContactReq(data)` — writes to `messages` collection.
 - `lib/seed.ts` contains a server-only helper to seed Firestore. It is not wired to the UI; run it manually.
 
@@ -43,6 +53,7 @@ There are no tests. `npm run dev` starts the Turbopack dev server on `http://loc
 
 - Next.js Image component is used.
 - Only `res.cloudinary.com` is allowed in `next.config.ts`. Add new hosts there if project images change.
+- Markdown images in `post` render as plain `<img>` and are also restricted by the CSP `img-src` in `next.config.ts` — host them on Cloudinary.
 
 ## Styling conventions
 

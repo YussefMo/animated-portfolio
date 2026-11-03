@@ -23,6 +23,10 @@ interface Project {
   role?: string;
   ctaLabel?: string;
   extraSections?: ExtraSection[];
+  /** Long-form case study, written in Markdown. */
+  post?: string;
+  /** Set by `getAllProjects` so cards know whether a case study exists. */
+  hasPost?: boolean;
   createdAt: string | { seconds: number; nanoseconds: number } | null;
 }
 

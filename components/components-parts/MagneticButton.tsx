@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { gsap } from 'gsap';
 import { cn } from '@/lib/utils';
 
@@ -69,11 +70,26 @@ export default function MagneticButton({
   );
 
   if (href) {
+    const linkClassName = cn(baseStyles, variants[variant], className);
+
+    // Internal routes go through next/link for client-side navigation.
+    if (href.startsWith('/')) {
+      return (
+        <Link
+          ref={ref as React.RefObject<HTMLAnchorElement>}
+          href={href}
+          className={linkClassName}
+        >
+          {content}
+        </Link>
+      );
+    }
+
     return (
       <a
         ref={ref as React.RefObject<HTMLAnchorElement>}
         href={href}
-        className={cn(baseStyles, variants[variant], className)}
+        className={linkClassName}
         target={href.startsWith('http') ? '_blank' : undefined}
         rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       >

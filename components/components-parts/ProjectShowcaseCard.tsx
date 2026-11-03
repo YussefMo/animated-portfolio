@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowUpRight, Code2 } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight, Code2, FileText } from 'lucide-react';
 import GlassPanel from './GlassPanel';
 import MagneticButton from './MagneticButton';
 
@@ -32,13 +33,29 @@ export default function ProjectShowcaseCard({
         <div className="absolute inset-0 rounded-xl bg-primary-container/5 blur-2xl transition-colors duration-500 group-hover:bg-primary-container/10" />
         <GlassPanel className="relative overflow-hidden p-2 shadow-2xl">
           <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-              sizes="(max-width: 1024px) 100vw, 66vw"
-            />
+            {project.hasPost ? (
+              <Link
+                href={`/projects/${project.id}`}
+                className="block h-full w-full"
+                aria-label={`Read the ${project.title} case study`}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+              </Link>
+            ) : (
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                sizes="(max-width: 1024px) 100vw, 66vw"
+              />
+            )}
           </div>
         </GlassPanel>
       </div>
@@ -54,7 +71,16 @@ export default function ProjectShowcaseCard({
             {categoryTag}
           </div>
           <h3 className="mb-4 font-headline-md text-headline-md text-text-primary">
-            {project.title}
+            {project.hasPost ? (
+              <Link
+                href={`/projects/${project.id}`}
+                className="transition-colors hover:text-primary"
+              >
+                {project.title}
+              </Link>
+            ) : (
+              project.title
+            )}
           </h3>
           <p className="mb-6 font-body-md text-body-md text-text-secondary">
             {project.description}
@@ -90,6 +116,16 @@ export default function ProjectShowcaseCard({
               >
                 View Source
               </MagneticButton>
+              {project.hasPost && (
+                <MagneticButton
+                  variant="glass"
+                  href={`/projects/${project.id}`}
+                  icon={<FileText className="h-4 w-4" />}
+                  className="w-full rounded-md px-4 py-3"
+                >
+                  Read Case Study
+                </MagneticButton>
+              )}
             </div>
           </div>
         </GlassPanel>

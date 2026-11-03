@@ -53,7 +53,7 @@ Defined in `next.config.ts:71-78` via the `headers()` callback.
 | Header | Reason Omitted |
 |---|---|
 | Cross-Origin-Embedder-Policy | Would require `Cross-Origin-Resource-Policy: cross-origin` on all cross-origin resources (Cloudinary images, Google Fonts). This project does not use `SharedArrayBuffer` or need cross-origin isolation. Setting it would break CDN-loaded resources. |
-| Cross-Origin-Resource-Policy | Would block social media crawlers (Twitter, Facebook, Discord) from fetching OG images (`/preview.png`, `/me.jpg`) and profile picture. Those crawlers fetch as cross-origin `no-cors` requests and would receive empty responses. |
+| Cross-Origin-Resource-Policy | Would block social media crawlers (Twitter, Facebook, Discord) from fetching OG images (`/preview.png`, `/me.png`) and profile picture. Those crawlers fetch as cross-origin `no-cors` requests and would receive empty responses. |
 
 ---
 
@@ -158,7 +158,7 @@ Restricts form submissions to same-origin only. The contact form uses a Server A
 |---|---|---|
 | Google Fonts (self-hosted via `next/font`) | ✅ | Geist, Inter, JetBrains Mono served from `/_next/static`. Covered by `'self'`. |
 | Material Symbols (Google-hosted font) | ✅ | `fonts.googleapis.com` in `style-src`; `fonts.gstatic.com` in `font-src`. |
-| `next/image` (local) | ✅ | `/me.jpg` and `/diagnosit.jpg` served from `'self'`. |
+| `next/image` (local) | ✅ | `/me.png` and `/diagnosit.jpg` served from `'self'`. |
 | `next/image` (remote) | ✅ | `res.cloudinary.com` explicitly allowed in `img-src`. |
 | Server Actions (contact form) | ✅ | POST to self allowed by `form-action 'self'` and `connect-src 'self'`. |
 | JSON-LD structured data | ✅ | `type="application/ld+json"` scripts are not JavaScript; CSP does not block them. |
@@ -175,7 +175,7 @@ Restricts form submissions to same-origin only. The contact form uses a Server A
 | WebGL canvas (AuroraShader) | ✅ | No external textures. Shader source is inline string, not loaded via CSP-restricted mechanism. |
 | 2D canvas (WarpNet) | ✅ | No external resources. |
 | Custom cursor | ✅ | No external resources. |
-| OG image previews | ✅ | CORP intentionally omitted so social media crawlers can fetch `/preview.png` and `/me.jpg`. |
+| OG image previews | ✅ | CORP intentionally omitted so social media crawlers can fetch `/preview.png` and `/me.png`. |
 | Production build | ✅ | `npm run build` succeeds. |
 | TypeScript | ✅ | `tsc --noEmit` passes. |
 | Lint | ✅ | ESLint passes. |

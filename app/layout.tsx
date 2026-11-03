@@ -104,7 +104,7 @@ export default function RootLayout({
     description:
       'Frontend Engineer building production SaaS products. React, Next.js, React Native, and AI integrations.',
     url: 'https://ymdev.me',
-    image: 'https://ymdev.me/me.jpg',
+    image: 'https://ymdev.me/me.png',
     sameAs: [
       'https://github.com/YussefMo',
       'https://www.linkedin.com/in/ymdev',
