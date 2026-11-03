@@ -162,7 +162,7 @@ export const about = {
     'I build for performance and maintainability. Bundle sizes down 70%. Render issues halved. 500+ API endpoints integrated with type-safe data layers. React Native apps that mirror web functionality without compromise.',
     'I ship across the stack architecture decisions, state management strategy, internationalization, AI integration patterns not just components. The kind of engineering that makes codebases faster to work in and products faster to market.'
   ],
-  image: '/me.png'
+  image: '/image0.png'
 };
 
 export const footer = {
