@@ -95,6 +95,9 @@ export const experiences: ExperienceItem[] = [
 ];
 
 export const skills: SkillItem[] = [
+  { name: 'PHP', icon: 'php', category: 'language' },
+  { name: 'Laravel', icon: 'layers', category: 'framework' },
+  { name: 'SQL', icon: 'database', category: 'language' },
   { name: 'JavaScript', icon: 'javascript', category: 'language' },
   { name: 'TypeScript', icon: 'code_blocks', category: 'language' },
   { name: 'React', icon: 'terminal', category: 'framework' },
@@ -113,7 +116,7 @@ export const skills: SkillItem[] = [
 ];
 
 // First 8 skills rendered as the hero arsenal modules (ARSN-01..08)
-export const heroSkills = skills.slice(0, 8);
+export const heroSkills = skills.slice(0, 12);
 
 export const services: ServiceItem[] = [
   {
