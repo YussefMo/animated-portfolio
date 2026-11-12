@@ -27,23 +27,28 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title:
-    'Youssef Mohammed Ali (YoussefMo | YmDev) — Frontend Engineer',
+    'Youssef Mohammed Ali (YoussefMo | YmDev) — Software Engineer',
   description:
-    'Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev). Frontend Engineer building production SaaS with React, Next.js, React Native, and AI integrations.',
+    'Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev). Software Engineer building production SaaS across web, mobile, and API — React, Next.js, React Native, Node, Laravel, and AI automation.',
   generator: 'Next.js',
   keywords: [
     'Youssef Mohammed Ali',
     'YoussefMo',
     'YmDev',
-    'Frontend Engineer',
+    'Software Engineer',
+    'Full-Stack Engineer',
+    'Product Engineer',
     'React Developer',
     'Next.js Developer',
     'React Native Developer',
     'Expo Developer',
-    'JavaScript',
+    'Node.js Developer',
+    'Laravel Developer',
+    'PHP',
     'TypeScript',
     'SaaS Developer',
-    'AI Frontend Engineer',
+    'AI Engineer',
+    'AI Automation',
     'Web Development',
     'Mobile Development'
   ],
@@ -51,9 +56,9 @@ export const metadata: Metadata = {
   creator: 'Youssef Mohammed Ali',
   publisher: 'Youssef Mohammed Ali',
   openGraph: {
-    title: 'Youssef Mohammed Ali — Frontend Engineer',
+    title: 'Youssef Mohammed Ali — Software Engineer',
     description:
-      'Frontend Engineer building production SaaS. React, Next.js, React Native, AI integrations. Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev).',
+      'Software Engineer building production SaaS end to end. React, Next.js, React Native, Node, Laravel, and AI automation. Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev).',
     url: 'https://ymdev.me',
     type: 'website',
     locale: 'en_US',
@@ -63,15 +68,15 @@ export const metadata: Metadata = {
         url: 'https://ymdev.me/preview.png',
         width: 1200,
         height: 630,
-        alt: 'Youssef Mohammed Ali — Frontend Engineer'
+        alt: 'Youssef Mohammed Ali — Software Engineer'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Youssef Mohammed Ali — Frontend Engineer',
+    title: 'Youssef Mohammed Ali — Software Engineer',
     description:
-      'Frontend Engineer building production SaaS. React, Next.js, React Native, AI integrations.',
+      'Software Engineer building production SaaS end to end. React, Next.js, React Native, Node, Laravel, and AI automation.',
     images: ['https://ymdev.me/preview.png']
   },
   robots: {
@@ -100,25 +105,31 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Youssef Mohammed Ali',
     alternateName: ['YoussefMo', 'YmDev'],
-    jobTitle: 'Frontend Engineer',
+    jobTitle: 'Software Engineer',
     description:
-      'Frontend Engineer building production SaaS products. React, Next.js, React Native, and AI integrations.',
+      'Software Engineer building production SaaS across web, mobile, and API. React, Next.js, React Native, Node, Laravel, and AI automation.',
     url: 'https://ymdev.me',
     image: 'https://ymdev.me/image0.png',
     sameAs: [
       'https://github.com/YussefMo',
       'https://www.linkedin.com/in/ymdev',
-      'https://web.facebook.com/ymdeve'
+      'https://web.facebook.com/ymdeve',
+      'https://www.youtube.com/@ymdeve',
+      'https://www.tiktok.com/@ym.deve',
+      'https://www.instagram.com/ymdeve'
     ],
     knowsAbout: [
       'React.js',
       'Next.js',
-      'JavaScript',
       'TypeScript',
-      'Web Development',
       'React Native',
-      'Expo',
-      'AI Frontend Engineering',
+      'Node.js',
+      'Laravel',
+      'PHP',
+      'PostgreSQL',
+      'MongoDB',
+      'AI Engineering',
+      'Workflow Automation',
       'SaaS Development'
     ]
   };
@@ -146,10 +157,11 @@ export default function RootLayout({
               minHeight: '100vh'
             }}
           >
-            <h2>Youssef Mohammed Ali - Frontend Engineer</h2>
+            <h2>Youssef Mohammed Ali - Software Engineer</h2>
             <p>
               Portfolio of Youssef Mohammed Ali (YoussefMo / YmDev), building
-              modern apps with React, Next.js, and React Native.
+              production SaaS across web, mobile, and API with React, Next.js,
+              React Native, Node, and Laravel.
             </p>
             <p>Please enable JavaScript to view the full interactive portfolio.</p>
           </div>

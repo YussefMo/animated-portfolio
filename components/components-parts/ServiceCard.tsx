@@ -1,4 +1,14 @@
-import { Bot, Component, Globe, Layers, Smartphone, Zap } from 'lucide-react';
+import {
+  Bot,
+  Component,
+  Database,
+  Globe,
+  Layers,
+  Server,
+  Smartphone,
+  Workflow,
+  Zap
+} from 'lucide-react';
 import GlassPanel from './GlassPanel';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -7,7 +17,10 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Component,
   Smartphone,
   Bot,
-  Globe
+  Globe,
+  Server,
+  Database,
+  Workflow
 };
 
 interface ServiceCardProps {

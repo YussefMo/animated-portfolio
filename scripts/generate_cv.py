@@ -2,53 +2,51 @@
 CV Generator — creates tailored .docx CVs and converts to PDF.
 
 Usage:
-  python scripts/generate_cv.py                  # base CV → youssef_cv.docx
-  python scripts/generate_cv.py --variant react  # React-focused variant
-  python scripts/generate_cv.py --pdf            # also output PDF
-  python scripts/generate_cv.py --job "Frontend Engineer at Vercel"
+  python scripts/generate_cv.py                       # base CV → youssef_cv.docx
+  python scripts/generate_cv.py --variant fullstack   # full-stack variant
+  python scripts/generate_cv.py --variant react       # React / Next.js variant
+  python scripts/generate_cv.py --pdf                 # also output PDF
+  python scripts/generate_cv.py --job "Software Engineer, Node.js and React"
 """
 
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.section import WD_ORIENT
-import argparse, os, json
+import argparse, os
 
 # ─── DATA ───────────────────────────────────────────────
 
 NAME = "Youssef Mohammed Ali"
-TITLE = "Frontend Engineer"
+TITLE = "Software Engineer"
+TAGLINE = "Full-stack product engineering — React · Next.js · React Native · Node · Laravel · AI automation"
 EMAIL = "youssefmohammed12090@gmail.com"
 PHONE = "+20 1062479462"
-LOCATION = "Menoufia, Egypt"
+LOCATION = "Menoufia, Egypt (Remote)"
 PORTFOLIO = "https://www.ymdev.me"
 LINKEDIN = "https://linkedin.com/in/ymdev"
 GITHUB = "https://github.com/YussefMo"
 
 SUMMARY_BASE = (
-    "Frontend Engineer with production experience building scalable SaaS web "
-    "and mobile applications using React, Next.js, TypeScript, and React Native. "
-    "Experienced in modern frontend architecture, performance optimization, "
-    "reusable design systems, AI-powered user experiences, and delivering "
-    "measurable business impact."
+    "Software Engineer with production experience shipping SaaS products end to end: "
+    "React and Next.js clients, React Native mobile apps, Node and Laravel APIs, and "
+    "AI/automation pipelines. Strong in frontend architecture, performance, and design "
+    "systems, with hands-on backend work in PostgreSQL, MongoDB, queues, and payments."
 )
 
 EXPERIENCES = [
     {
         "company": "Diagnosit",
-        "role": "Frontend Engineer",
+        "role": "Frontend Engineer (full-stack scope)",
         "period": "Jun 2025 — Present",
         "location": "Remote, UAE",
         "bullets": [
-            "Re-architected a large Next.js SaaS platform into modular architecture, accelerating feature delivery by ~50% and improving long-term maintainability.",
-            "Led a complete UI/UX redesign that reduced rendering issues by ~50% and established consistent, accessible design patterns across the product.",
-            "Built the Live Patient Link feature, reducing initial load time by 45% and bundle size by 70%.",
-            "Optimized landing page performance, cutting load times by 60% through render optimization, asset pipeline improvements, and strategic code splitting.",
-            "Architected the React Native (Expo) mobile application with full feature parity to the web platform — authentication, real-time dashboards, push notifications (FCM).",
-            "Designed and shipped a reusable design system adopted across the product, reducing new feature development time by 45%.",
-            "Integrated and maintained 500+ REST API endpoints with TanStack Query and Axios, implementing type-safe data fetching, optimistic updates, and cache invalidation.",
-            "Implemented full internationalization (i18n) across web and mobile with locale-aware routing, translated UI, and RTL layout support.",
-        ]
+            "Re-architected a large Next.js SaaS application into a modular architecture, accelerating feature delivery by ~50% and improving long-term maintainability.",
+            "Led the UI/UX redesign and built the shared design system (shadcn/ui + Tailwind), reducing new feature development time by 45%.",
+            "Shipped the Live Patient Link, a public treatment-plan experience with 3D visualisation, cutting initial load by 45% and bundle size by 70%.",
+            "Built a client- and server-side PDF pipeline covering 33 dental and hair widgets, rendering bilingual treatment plans.",
+            "Architected the React Native (Expo) mobile app to full web parity: authentication, realtime chat, push notifications, deep links, and EAS releases.",
+            "Integrated 500+ REST endpoints with TanStack Query and Axios, adding caching, optimistic updates, and typed contracts across web and mobile.",
+        ],
     },
     {
         "company": "Web Masters",
@@ -57,9 +55,26 @@ EXPERIENCES = [
         "location": "Remote, Egypt",
         "bullets": [
             "Built responsive React and Next.js interfaces from Figma designs within an Agile team.",
-            "Refactored legacy components into clean, maintainable, production-ready code.",
-            "Collaborated through Git workflows, code reviews, and version control best practices.",
-        ]
+            "Refactored legacy components into clean, maintainable, production-ready code and worked through Git reviews.",
+        ],
+    },
+]
+
+PROJECTS = [
+    {
+        "name": "AI Website Audit — full-stack SaaS",
+        "stack": "Next.js · Express · MongoDB · BullMQ · Redis · Playwright · Lighthouse · Gemini",
+        "bullet": "Built both halves of a production audit product: a Next.js 16 client with i18n and billing, and an API with queued Playwright/Lighthouse workers, JWT and Google OAuth, Paymob subscriptions, and usage quotas.",
+    },
+    {
+        "name": "Multi-Tenant SaaS API",
+        "stack": "Laravel 13 · PHP 8.3 · PostgreSQL · Stripe · OpenAPI 3.1 · GitHub Actions",
+        "bullet": "Designed a schema-per-tenant Laravel API with a separate owner schema, Stripe billing and webhooks, generated OpenAPI docs, demo seeding, and CI.",
+    },
+    {
+        "name": "Faceless Video Creator — closed source",
+        "stack": "n8n · llama.cpp · Chatterbox · Remotion · React · Python · ffmpeg",
+        "bullet": "Built a local-first content pipeline that turns a topic into a rendered 9:16 video: research, script, local voice, validated scene plan, and two human approval gates.",
     },
 ]
 
@@ -70,40 +85,51 @@ EDUCATION = {
 }
 
 SKILLS = [
-    "JavaScript (ES6), TypeScript, HTML5, CSS3",
-    "React, Next.js, React Native, Expo",
-    "Angular, Bootstrap, PrimeNG, Angular Material",
-    "TanStack Query, Axios, REST APIs",
-    "Tailwind CSS, Design Systems, Component Architecture",
-    "Firebase, Supabase",
-    "Git, GitHub, Figma, Vercel",
+    "Languages: TypeScript, JavaScript (ES6), PHP, SQL, Python",
+    "Frontend: React, Next.js, React Native, Expo, Tailwind CSS, shadcn/ui, GSAP",
+    "Backend: Node.js, Express, Laravel, REST APIs, PostgreSQL, MongoDB, Redis, BullMQ",
+    "Data & State: TanStack Query, Axios, Zod, React Hook Form",
+    "AI & Automation: Gemini, Vercel AI SDK, n8n, agent workflows, Playwright, Lighthouse",
+    "Payments & Services: Stripe, Paymob, Firebase, Cloudinary",
+    "Tooling: Git, GitHub Actions, Vite, Vitest, Vercel, Figma",
 ]
 
 # ─── VARIANTS ───────────────────────────────────────────
 
 VARIANTS = {
-    "react": {
-        "title": "React / Next.js Frontend Engineer",
+    "fullstack": {
+        "title": "Software Engineer — Full-Stack",
         "summary_extra": (
-            "Deep expertise in React Server Components, App Router architecture, "
-            "and Next.js performance optimization. Built and shipped production "
-            "SaaS applications with measurable performance gains."
+            "Ships the whole product surface: client, mobile, API, and automation. "
+            "Comfortable owning a feature from schema to shipped UI."
+        ),
+    },
+    "react": {
+        "title": "Software Engineer — React / Next.js",
+        "summary_extra": (
+            "Deep experience with React Server Components, App Router architecture, "
+            "and Next.js performance optimization on production SaaS."
         ),
     },
     "mobile": {
-        "title": "React Native / Mobile Frontend Engineer",
+        "title": "Software Engineer — React Native",
         "summary_extra": (
-            "Specialized in cross-platform mobile development with React Native and Expo. "
-            "Architected mobile apps with full feature parity to web platforms — "
-            "authentication, real-time dashboards, push notifications, and i18n."
+            "Specialized in cross-platform mobile with React Native and Expo: "
+            "authentication, realtime data, push notifications, deep links, and store releases."
         ),
     },
     "ai": {
-        "title": "AI Frontend Engineer",
+        "title": "Software Engineer — AI Products",
         "summary_extra": (
-            "Experienced in building AI-powered frontend experiences: LLM integrations, "
-            "conversational agent interfaces, tool-augmented chatbots, and real-time "
-            "streaming response UIs."
+            "Builds AI-powered product features and agent pipelines: LLM integrations, "
+            "structured outputs, local models, and human-in-the-loop automation."
+        ),
+    },
+    "backend": {
+        "title": "Software Engineer — Backend",
+        "summary_extra": (
+            "Hands-on backend work with Node and Laravel: multi-tenant data models, "
+            "queues and workers, payments, and typed API contracts."
         ),
     },
 }
@@ -114,10 +140,10 @@ def build_cv(variant=None, job_description=None, output_path="youssef_cv.docx"):
     doc = Document()
 
     section = doc.sections[0]
-    section.top_margin = Inches(0.6)
-    section.bottom_margin = Inches(0.5)
-    section.left_margin = Inches(0.75)
-    section.right_margin = Inches(0.75)
+    section.top_margin = Inches(0.55)
+    section.bottom_margin = Inches(0.45)
+    section.left_margin = Inches(0.7)
+    section.right_margin = Inches(0.7)
 
     style = doc.styles["Normal"]
     font = style.font
@@ -142,6 +168,13 @@ def build_cv(variant=None, job_description=None, output_path="youssef_cv.docx"):
     run.size = Pt(12)
     run.font.color.rgb = RGBColor(0x40, 0x40, 0x40)
 
+    tagline_p = doc.add_paragraph()
+    tagline_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    tagline_p.paragraph_format.space_after = Pt(2)
+    run = tagline_p.add_run(TAGLINE)
+    run.size = Pt(8.5)
+    run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
     contact_p = doc.add_paragraph()
     contact_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     contact_p.paragraph_format.space_after = Pt(2)
@@ -152,13 +185,11 @@ def build_cv(variant=None, job_description=None, output_path="youssef_cv.docx"):
 
     links_p = doc.add_paragraph()
     links_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    links_p.paragraph_format.space_after = Pt(10)
+    links_p.paragraph_format.space_after = Pt(8)
     links_text = f"LinkedIn: {LINKEDIN}  |  GitHub: {GITHUB}  |  Portfolio: {PORTFOLIO}"
     run = links_p.add_run(links_text)
     run.size = Pt(9)
     run.font.color.rgb = RGBColor(0x4b, 0x4d, 0x83)
-
-    add_section_heading(doc, "")
 
     # ── Summary ──
     add_section_heading(doc, "Professional Summary")
@@ -170,14 +201,14 @@ def build_cv(variant=None, job_description=None, output_path="youssef_cv.docx"):
     if job_description:
         summary = tailor_summary(summary, job_description)
     p = doc.add_paragraph(summary)
-    p.paragraph_format.space_after = Pt(8)
+    p.paragraph_format.space_after = Pt(6)
 
     # ── Experience ──
     add_section_heading(doc, "Experience")
     for exp in EXPERIENCES:
         header = doc.add_paragraph()
         header.paragraph_format.space_after = Pt(0)
-        header.paragraph_format.space_before = Pt(6)
+        header.paragraph_format.space_before = Pt(5)
         run = header.add_run(f"{exp['company']} — {exp['role']}")
         run.bold = True
         run.size = Pt(10.5)
@@ -193,18 +224,40 @@ def build_cv(variant=None, job_description=None, output_path="youssef_cv.docx"):
             bp.clear()
             run = bp.add_run(bullet)
             run.size = Pt(10)
-            bp.paragraph_format.space_after = Pt(2)
+            bp.paragraph_format.space_after = Pt(1)
+
+    # ── Selected Projects ──
+    add_section_heading(doc, "Selected Projects")
+    for project in PROJECTS:
+        header = doc.add_paragraph()
+        header.paragraph_format.space_after = Pt(0)
+        header.paragraph_format.space_before = Pt(4)
+        run = header.add_run(project["name"])
+        run.bold = True
+        run.size = Pt(10)
+
+        stack_p = doc.add_paragraph()
+        stack_p.paragraph_format.space_after = Pt(1)
+        run = stack_p.add_run(project["stack"])
+        run.size = Pt(8.5)
+        run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+        bp = doc.add_paragraph(style="List Bullet")
+        bp.clear()
+        run = bp.add_run(project["bullet"])
+        run.size = Pt(9.5)
+        bp.paragraph_format.space_after = Pt(2)
 
     # ── Education ──
     add_section_heading(doc, "Education")
     edu = doc.add_paragraph()
-    edu.paragraph_format.space_after = Pt(2)
+    edu.paragraph_format.space_after = Pt(1)
     run = edu.add_run(f"{EDUCATION['degree']} — {EDUCATION['school']}")
     run.bold = True
-    run.size = Pt(10.5)
+    run.size = Pt(10)
 
     edu_meta = doc.add_paragraph()
-    edu_meta.paragraph_format.space_after = Pt(8)
+    edu_meta.paragraph_format.space_after = Pt(4)
     run = edu_meta.add_run(EDUCATION["period"])
     run.size = Pt(9)
     run.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
@@ -214,7 +267,7 @@ def build_cv(variant=None, job_description=None, output_path="youssef_cv.docx"):
     for skill in SKILLS:
         sp = doc.add_paragraph(skill)
         sp.paragraph_format.space_after = Pt(1)
-        sp.style.font.size = Pt(10)
+        sp.style.font.size = Pt(9.5)
 
     doc.save(output_path)
     print(f"Saved: {os.path.abspath(output_path)}")
@@ -241,13 +294,15 @@ def tailor_summary(summary, job_description):
     if "react native" in keywords or "mobile" in keywords:
         additions.append("Proven experience architecting cross-platform mobile applications with React Native and Expo.")
     if "ai" in keywords or "llm" in keywords or "machine learning" in keywords:
-        additions.append("Hands-on experience integrating AI/LLM features into production frontend applications.")
+        additions.append("Hands-on experience integrating AI/LLM features and agent workflows into production products.")
     if "design system" in keywords:
         additions.append("Shipped reusable design systems that accelerated team velocity by 45%.")
     if "performance" in keywords:
         additions.append("Track record of measurable performance optimization — 60% faster page loads, 70% smaller bundles.")
-    if "angular" in keywords or "bootstrap" in keywords or "primeng" in keywords:
-        additions.append("Experience building enterprise frontend applications with Angular, TypeScript, and component libraries including PrimeNG and Bootstrap.")
+    if "backend" in keywords or "laravel" in keywords or "php" in keywords or "node" in keywords:
+        additions.append("Hands-on backend experience with Node.js and Laravel, including PostgreSQL/MongoDB, queues, and payments.")
+    if "full-stack" in keywords or "full stack" in keywords:
+        additions.append("Ships features end to end, from database schema and API to the shipped interface.")
     if additions:
         return summary + " " + " ".join(additions)
     return summary

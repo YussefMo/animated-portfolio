@@ -7,7 +7,7 @@ export const brand = {
 export const personal = {
   name: 'Youssef Mohammed Ali',
   aliases: ['YoussefMo', 'YmDev'],
-  role: 'Frontend Engineer',
+  role: 'Software Engineer',
   email: 'youssefmohammed12090@gmail.com',
   website: 'https://ymdev.me',
   location: 'Egypt / Remote',
@@ -21,6 +21,7 @@ export const navLinks = [
   { label: 'Diagnosit', href: '#diagnosit' },
   { label: 'Arsenal', href: '#arsenal' },
   { label: 'Showcase', href: '#showcase' },
+  { label: 'Content', href: '#content' },
   { label: 'Services', href: '#services' }
 ];
 
@@ -36,18 +37,73 @@ export const socials = [
     icon: 'Linkedin'
   },
   {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@ymdeve',
+    icon: 'Youtube'
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@ym.deve',
+    icon: 'Tiktok'
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/ymdeve',
+    icon: 'Instagram'
+  },
+  {
     label: 'Discord',
     href: 'https://discord.com/users/sp_savage',
     icon: 'MessageSquare'
   }
 ];
 
+export const content = {
+  eyebrow: 'CONTENT // BEYOND THE CODE',
+  title: 'I explain the work',
+  description:
+    'Short videos on architecture, backend decisions, and the parts of shipping that never make it into a README.',
+  note: 'New breakdowns weekly. Same handle everywhere: @ymdeve.',
+  platforms: [
+    {
+      label: 'YouTube',
+      handle: '@ymdeve',
+      href: 'https://www.youtube.com/@ymdeve',
+      icon: 'youtube',
+      color: '#FF0033',
+      format: 'Long-form',
+      description:
+        'Architecture walkthroughs and the tradeoffs behind them, explained end to end.'
+    },
+    {
+      label: 'TikTok',
+      handle: '@ym.deve',
+      href: 'https://www.tiktok.com/@ym.deve',
+      icon: 'tiktok',
+      color: '#25F4EE',
+      format: 'Shorts',
+      description:
+        'One engineering idea per video, under a minute, no filler.'
+    },
+    {
+      label: 'Instagram',
+      handle: '@ymdeve',
+      href: 'https://www.instagram.com/ymdeve',
+      icon: 'instagram',
+      color: '#E1306C',
+      format: 'Build logs',
+      description:
+        'Screens, slices, and what shipping actually looks like day to day.'
+    }
+  ]
+};
+
 export const hero = {
   status: 'SYS.STATUS: ONLINE',
-  headline: 'Youssef Mohammed Ali Frontend Engineer',
-  subheadline: 'I build SaaS products that ship.',
+  headline: 'Youssef Mohammed Ali Software Engineer',
+  subheadline: 'I build SaaS products end to end.',
   description:
-    'Frontend architecture for production web and mobile applications. AI-powered experiences, reusable design systems, cross-platform delivery.',
+    'Product engineering across web, mobile, and server. React and Next.js on the client, React Native on mobile, Node and Laravel behind it, AI and automation where they earn their place.',
   primaryCta: {
     label: 'Explore My Work',
     href: '#showcase',
@@ -63,13 +119,13 @@ export const hero = {
 export const experiences: ExperienceItem[] = [
   {
     company: 'Diagnosit',
-    role: 'Frontend Engineer',
-    period: 'Jun 2025 Present',
+    role: 'Frontend Engineer (Full-Stack Scope)',
+    period: 'Jun 2025 — Present',
     location: 'UAE',
     type: 'Full-time (Remote)',
     logo: '/diagnosit.jpg',
     description:
-      'Re-architected a large Next.js SaaS platform into modular architecture, accelerating feature delivery by ~50%. Led a full UI/UX redesign that reduced rendering issues by ~50% and improved consistency across the product. Optimized landing page performance, cutting load times by 60%. Architected the React Native (Expo) mobile app with full feature parity. Integrated 500+ REST API endpoints with TanStack Query and Axios. Built a reusable design system that reduced new feature development time by 45%. Implemented internationalization, complex state management, and AI-ready frontend architecture.',
+      'Software engineering on a production dental SaaS used by real clinics. Re-architected the Next.js application into a modular codebase, cutting feature delivery time by ~50%. Led the UI/UX redesign and built the design system adopted across the product. Shipped the Live Patient Link and a PDF generation pipeline covering 33 dental and hair widgets. Architected the React Native (Expo) app with full web parity. Integrated 500+ REST endpoints with TanStack Query, plus internationalization, RBAC, realtime, and AI-ready frontend infrastructure.',
     skills: [
       'Next.js',
       'React',
@@ -84,7 +140,7 @@ export const experiences: ExperienceItem[] = [
   {
     company: 'Web Masters',
     role: 'Frontend Developer Intern',
-    period: 'Apr 2025 Jun 2025',
+    period: 'Apr 2025 — Jun 2025',
     location: 'Egypt',
     type: 'Internship (Remote)',
     logo: '/web-masters.jpg',
@@ -95,19 +151,29 @@ export const experiences: ExperienceItem[] = [
 ];
 
 export const skills: SkillItem[] = [
-  { name: 'PHP', icon: 'php', category: 'language' },
-  { name: 'Laravel', icon: 'layers', category: 'framework' },
-  { name: 'SQL', icon: 'database', category: 'language' },
-  { name: 'JavaScript', icon: 'javascript', category: 'language' },
   { name: 'TypeScript', icon: 'code_blocks', category: 'language' },
   { name: 'React', icon: 'terminal', category: 'framework' },
   { name: 'Next.js', icon: 'layers', category: 'framework' },
   { name: 'React Native', icon: 'smartphone', category: 'framework' },
-  { name: 'Expo', icon: 'view_in_ar', category: 'framework' },
+  { name: 'Node.js', icon: 'hub', category: 'framework' },
+  { name: 'Laravel', icon: 'route', category: 'framework' },
+  { name: 'PHP', icon: 'code', category: 'language' },
+  { name: 'PostgreSQL', icon: 'database', category: 'language' },
+  { name: 'MongoDB', icon: 'storage', category: 'language' },
   { name: 'Tailwind CSS', icon: 'css', category: 'framework' },
+  { name: 'TanStack Query', icon: 'cached', category: 'framework' },
   { name: 'AI / LLMs', icon: 'auto_awesome', category: 'tool' },
-  { name: 'Tanstack Query', icon: 'database', category: 'framework' },
-  { name: 'Axios', icon: 'database', category: 'framework' },
+  { name: 'JavaScript', icon: 'javascript', category: 'language' },
+  { name: 'SQL', icon: 'database', category: 'language' },
+  { name: 'Expo', icon: 'view_in_ar', category: 'framework' },
+  { name: 'Express', icon: 'api', category: 'framework' },
+  { name: 'Redis', icon: 'bolt', category: 'tool' },
+  { name: 'BullMQ', icon: 'account_tree', category: 'tool' },
+  { name: 'Playwright', icon: 'smart_toy', category: 'tool' },
+  { name: 'Stripe', icon: 'payments', category: 'tool' },
+  { name: 'n8n', icon: 'account_tree', category: 'tool' },
+  { name: 'Three.js', icon: 'view_in_ar', category: 'framework' },
+  { name: 'Vitest', icon: 'science', category: 'tool' },
   { name: 'Git', icon: 'terminal', category: 'tool' },
   { name: 'Vercel', icon: 'cloud', category: 'tool' },
   { name: 'Figma', icon: 'design_services', category: 'tool' },
@@ -115,55 +181,55 @@ export const skills: SkillItem[] = [
   { name: 'Supabase', icon: 'database', category: 'tool' }
 ];
 
-// First 8 skills rendered as the hero arsenal modules (ARSN-01..08)
+// First 12 skills rendered as the hero arsenal modules (ARSN-01..12)
 export const heroSkills = skills.slice(0, 12);
 
 export const services: ServiceItem[] = [
   {
-    title: 'Frontend Architecture',
+    title: 'Product Engineering',
     description:
-      'Modular Next.js architectures that ship fast and scale. Server Components, route design, data-layer strategy, bundle optimization.',
+      'Ownership from architecture to ship. Web, mobile, and API delivered as one product instead of three disconnected surfaces.',
     icon: 'Layers'
   },
   {
-    title: 'Performance Engineering',
+    title: 'Backend & APIs',
     description:
-      '60% faster landing pages. 70% smaller bundles. Render optimization, asset pipelines, caching strategies that deliver measurable results.',
-    icon: 'Zap'
+      'Node and Laravel services with PostgreSQL or MongoDB, queue workers, payments, and typed contracts the client can trust.',
+    icon: 'Server'
   },
   {
-    title: 'Design Systems',
+    title: 'Frontend Architecture',
     description:
-      'Reusable component libraries adopted across products. 45% faster feature development through shared primitives, consistent APIs, and documented patterns.',
+      'Modular Next.js and React architectures that survive contact with product. Server Components, routing, data-layer strategy, bundle control.',
     icon: 'Component'
   },
   {
-    title: 'Mobile (React Native)',
+    title: 'Mobile Engineering',
     description:
-      'Cross-platform apps with full feature parity to web. Expo, native navigation, push notifications, real-time data architected from web patterns.',
+      'React Native and Expo apps with feature parity to web authentication, realtime data, push notifications, deep links, store builds.',
     icon: 'Smartphone'
   },
   {
-    title: 'AI Interfaces',
+    title: 'AI & Automation',
     description:
-      'LLM-powered features, conversational agents, tool-augmented chatbots. Streaming responses, RAG, OpenAI API integration patterns.',
+      'LLM features and agent workflows with deterministic checks and human gates. Local models, n8n orchestration, structured outputs.',
     icon: 'Bot'
   },
   {
-    title: 'Product Engineering',
+    title: 'Performance & Reliability',
     description:
-      'Ownership from architecture to ship. Complex state management, internationalization, 500+ API integrations, and AI-ready frontend infrastructure.',
-    icon: 'Globe'
+      'Measurable gains, not claims. 60% faster page loads, 70% smaller bundles, render issues halved, tests and type checks gating every change.',
+    icon: 'Zap'
   }
 ];
 
 export const about = {
   short:
-    'I build production SaaS scalable architecture, measurable performance, cross-platform delivery. Web and mobile. AI-ready frontends. Design systems that ship.',
+    'I am a software engineer who ships complete products web, mobile, API, and the automation around them. Three years in, most of it on a production SaaS used by real clinics.',
   paragraphs: [
-    'I focus on the systems behind the surface modular Next.js architectures, reusable design systems, and mobile apps with full feature parity. At Diagnosit, I re-architected a SaaS platform from monolith to modular, cutting feature delivery time by half and landing page load times by 60%.',
-    'I build for performance and maintainability. Bundle sizes down 70%. Render issues halved. 500+ API endpoints integrated with type-safe data layers. React Native apps that mirror web functionality without compromise.',
-    'I ship across the stack architecture decisions, state management strategy, internationalization, AI integration patterns not just components. The kind of engineering that makes codebases faster to work in and products faster to market.'
+    'At Diagnosit I work across a dental SaaS: re-architected a large Next.js codebase into modules, built the shared design system, shipped the public Live Patient Link and a 33-widget PDF pipeline, and architected the React Native app to full web parity.',
+    'Outside work I build the other side of the stack: Node APIs with queues, Playwright and Lighthouse workers, Laravel multi-tenant backends with Stripe billing, and agent pipelines that turn a topic into a finished video with local models.',
+    'What I optimise for is boring on purpose architecture that holds under product pressure, measurable performance, and codebases that are faster to work in six months after I leave them.'
   ],
   image: '/image0.png'
 };
@@ -193,7 +259,7 @@ export const seedProjects = [
       'https://res.cloudinary.com/dum6jn15h/image/upload/v1748886944/Screenshot_2025-06-02_205534_kcryso.png',
     liveDemo: 'https://e-commerce-dashboard-theta.vercel.app/',
     repo: 'https://github.com/YussefMo/e-commerce-dashboard',
-    role: 'Fullstack Dev',
+    role: 'Software Engineer',
     ctaLabel: 'Initialize Demo',
     extraSections: [],
     post: '',

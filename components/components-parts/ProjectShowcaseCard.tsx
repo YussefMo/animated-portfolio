@@ -90,7 +90,7 @@ export default function ProjectShowcaseCard({
             <div className="flex justify-between items-center">
               <span className="font-code text-code-tag text-text-secondary">ROLE</span>
               <span className="font-label-caps text-label-caps text-text-primary text-right">
-                {project.role || 'Frontend Engineer'}
+                {project.role || 'Software Engineer'}
               </span>
             </div>
             <div className="flex justify-between items-center gap-4">

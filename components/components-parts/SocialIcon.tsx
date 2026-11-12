@@ -1,9 +1,13 @@
 import { Github, Linkedin, MessageSquare } from 'lucide-react';
+import { SiInstagram, SiTiktok, SiYoutube } from 'react-icons/si';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Github,
   Linkedin,
-  MessageSquare
+  MessageSquare,
+  Youtube: SiYoutube,
+  Tiktok: SiTiktok,
+  Instagram: SiInstagram
 };
 
 interface SocialIconProps {

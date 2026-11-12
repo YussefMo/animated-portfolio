@@ -9,6 +9,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import TrajectorySection from '@/components/sections/TrajectorySection';
 import DiagnositCaseStudy from '@/components/sections/DiagnositCaseStudy';
 import ArsenalSection from '@/components/sections/ArsenalSection';
+import ContentSection from '@/components/sections/ContentSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import FooterSection from '@/components/sections/FooterSection';
 import ContactModal from '@/components/components-parts/ContactModal';
@@ -52,6 +53,7 @@ export default function Home() {
         <DiagnositCaseStudy />
         <ArsenalSection />
         <ShowcaseSection />
+        <ContentSection />
         <ServicesSection />
         <FooterSection />
       </main>

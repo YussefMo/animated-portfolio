@@ -155,7 +155,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div>
               <dt className="font-code-tag text-text-secondary">ROLE</dt>
               <dd className="mt-2 font-label-caps text-text-primary">
-                {project.role || 'Frontend Engineer'}
+                {project.role || 'Software Engineer'}
               </dd>
             </div>
             <div>

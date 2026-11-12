@@ -41,7 +41,7 @@ export default function ArsenalSection() {
     setExpanded(!expanded);
   }
 
-  const extraSkills = skills.slice(8);
+  const extraSkills = skills.slice(12);
 
   return (
     <SectionReveal>

@@ -40,7 +40,7 @@ const highlights = [
   {
     icon: Smartphone,
     title: 'React Native',
-    body: 'Architected the Expo-based mobile application from the web platform\'s patterns. Full feature parity — authentication, real-time dashboards, push notifications (FCM) — rebuilt natively without compromise.'
+    body: 'Architected the Expo-based mobile application from the web platform\'s patterns. Full feature parity authentication, real-time dashboards, push notifications (FCM) rebuilt natively without compromise.'
   },
   {
     icon: Box,
@@ -50,7 +50,7 @@ const highlights = [
   {
     icon: Globe,
     title: 'Internationalization',
-    body: 'Implemented full i18n support across web and mobile. Locale-aware routing, translated UI, RTL layouts — architected from the data layer up rather than patched at the surface.'
+    body: 'Implemented full i18n support across web and mobile. Locale-aware routing, translated UI, RTL layouts architected from the data layer up rather than patched at the surface.'
   },
   {
     icon: Gauge,

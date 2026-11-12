@@ -11,7 +11,7 @@
 Name: Youssef Mohammed
 
 Role:
-Frontend Engineer
+Software Engineer (full-stack product engineering)
 
 Location:
 Menoufia, Egypt
@@ -34,13 +34,14 @@ https://github.com/YussefMo
 
 I am actively looking for:
 
+- Software Engineer
+- Full-Stack Engineer
+- Product Engineer
 - Frontend Engineer
 - React Engineer
 - Next.js Engineer
-- Product Engineer
-- Frontend Software Engineer
-- Full Stack JavaScript (Frontend-focused)
-- AI Frontend Engineer
+- React Native Engineer
+- AI / Automation Engineer
 
 Preferred work:
 
@@ -63,7 +64,7 @@ Avoid low-budget web agencies whenever possible.
 
 # Professional Summary
 
-Frontend Engineer with production experience building scalable SaaS web and mobile applications.
+Software Engineer with production experience shipping SaaS products end to end: React and Next.js clients, React Native mobile apps, Node and Laravel APIs, and AI/automation pipelines.
 
 Experienced in:
 
@@ -72,6 +73,9 @@ Experienced in:
 - TypeScript
 - React Native
 - Expo
+- Node.js
+- Laravel / PHP
+- PostgreSQL / MongoDB
 - Tailwind CSS
 - shadcn/ui
 - TanStack Query
@@ -80,10 +84,11 @@ Experienced in:
 Strong background in:
 
 - Frontend Architecture
+- Backend & API Design
 - Performance Optimization
 - Design Systems
 - Component Libraries
-- AI Interfaces
+- AI Interfaces & Agent Workflows
 - Product Engineering
 - Scalable State Management
 - Large SaaS Applications
@@ -92,7 +97,7 @@ Strong background in:
 
 # Current Experience
 
-## Frontend Engineer
+## Frontend Engineer (full-stack scope)
 
 Company:
 Diagnosit
@@ -103,9 +108,12 @@ Remote (UAE)
 Start:
 June 2025
 
+Employment:
+Employee (not owner)
+
 Description:
 
-Diagnosit is a modern Dental SaaS platform used by clinics for treatment planning and CRM management.
+Diagnosit is a modern Dental SaaS platform used by clinics for treatment planning, CRM, and patient sharing.
 
 Responsibilities:
 
@@ -120,12 +128,13 @@ Responsibilities:
 - Built Live Patient Link feature
 - Reduced bundle size by 70%
 - Reduced initial loading by 45%
+- Built the PDF pipeline (33 dental + hair widgets)
 - Architected React Native mobile application
 - Achieved feature parity with web
 - Integrated 500+ REST API endpoints
 - Used Axios + TanStack Query
 - Implemented complex business logic
-- Internationalization (Next Intl)
+- Internationalization (Next Intl) + RTL
 - Large scale state management
 - Worked closely with backend team
 
@@ -142,6 +151,7 @@ Technologies:
 - Axios
 - Framer Motion
 - shadcn/ui
+- Three.js
 - Firebase
 - Supabase
 
@@ -204,6 +214,18 @@ Styling
 - Framer Motion
 - NativeWind
 
+Backend
+
+- Node.js
+- Express
+- Laravel
+- PHP
+- REST APIs
+- PostgreSQL
+- MongoDB
+- Redis / BullMQ
+- Stripe / Paymob
+
 Backend Services
 
 - Firebase
@@ -212,9 +234,11 @@ Backend Services
 Developer Tools
 
 - Git
-- GitHub
+- GitHub / GitHub Actions
 - Vercel
 - Figma
+- Playwright
+- Vitest
 
 AI
 
@@ -311,6 +335,71 @@ Built using
 Purpose:
 
 Showcase production engineering work rather than simply listing technologies.
+
+---
+
+## AI Website Audit (full-stack SaaS)
+
+Stack
+
+- Next.js 16
+- Express
+- MongoDB
+- BullMQ + Redis
+- Playwright + Lighthouse
+- Gemini
+- JWT + Google OAuth
+- Paymob
+
+Features
+
+- Queued audit workers
+- Subscriptions and quotas
+- Report generation
+- Bilingual dashboard
+
+---
+
+## Multi-Tenant SaaS API
+
+Stack
+
+- Laravel 13
+- PHP 8.3
+- PostgreSQL
+- Stripe
+- OpenAPI 3.1
+- GitHub Actions
+
+Features
+
+- Schema-per-tenant isolation
+- Owner schema and tenant lifecycle
+- Stripe billing and webhooks
+- Generated API docs
+- CI pipeline
+
+---
+
+## Faceless Video Creator (closed source)
+
+Stack
+
+- n8n
+- llama.cpp / Qwen
+- Chatterbox
+- Remotion
+- React
+- Python
+- ffmpeg
+
+Features
+
+- Telegram-triggered pipeline
+- Research, script, and voice stages
+- Validated scene-plan renderer
+- Two human approval gates
+- Self-learning rule loop
 
 ---
 
@@ -411,7 +500,7 @@ Avoid:
 - Low-budget outsourcing agencies
 - Companies with poor engineering culture
 - Jobs requiring WordPress
-- Jobs requiring PHP only
+- PHP-only roles with no product or full-stack scope
 
 ---
 
@@ -422,6 +511,7 @@ Professional experience is stronger than personal projects.
 Always emphasize:
 
 - Architecture
+- Full-stack scope
 - Business impact
 - Performance
 - Ownership
@@ -436,7 +526,7 @@ Projects are secondary.
 
 The portfolio should communicate:
 
-"I build production-grade SaaS products."
+"I ship production SaaS end to end."
 
 NOT
 
